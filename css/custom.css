@@ -73,6 +73,12 @@ hr {
 
 }
 
+/*Mask search */
+#searchInputGroup {
+  max-width: 400px;
+  width:100%;
+}
+
 /*THings to do*/
 #listThingsToDo {
   list-style: none;
@@ -124,9 +130,10 @@ hr {
 }
 #social li a svg {
   height: 30px;
-  width: auto;
+  width: 30px;
   fill:#a7abae;
   transition: fill .2s;
+  overflow: hidden;
 }
 #social li a svg:hover {
   fill:white;
