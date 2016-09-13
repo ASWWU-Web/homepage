@@ -7,31 +7,30 @@
 
     <!-- css stuff  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/things2do.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
       <ul id="nav-links" class="nav navbar-nav text-xs-center">
         <li >
-          <a class="smooth text-uppercase" href="#aswwu"> ASWWU</a>
+          <a class="smooth text-uppercase" href="../"> ASWWU</a>
         </li>
         <li >
           <a class="smooth text-uppercase" href="https://aswwu.com/mask">Mask</a>
         </li>
         <li class='hidden-xs-down'>
-          <a class="smooth text-uppercase" href="#upcomming">Upcomming</a>
+          <a class="smooth text-uppercase" href="https://aswwu.com/#upcomming">Upcomming</a>
         </li>
         <li class="hidden-xs-down">
           <a class="smooth text-uppercase" href="https://aswwu.com/atlas">Atlas</a>
         </li>
         <li class="hidden-sm-down">
-          <a class="text-uppercase" href="./things2do">Things to do </a>
+          <a class="smooth text-uppercase" href="#thingsToDo">Things to do </a>
         </li>
         <li class="hidden-sm-down">
-          <a class="smooth text-uppercase" href="#gear">Gear</a>
+          <a class="smooth text-uppercase" href="https://aswwu.com#MT_Rents">MT. Rents</a>
         </li>
         <li class="dropdown">
           <a class="nav-link dropdown-toggle text-uppercase" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
@@ -39,89 +38,61 @@
             <a class="dropdown-item smooth text-uppercase hidden-sm-up" href="#upcomming">Upcomming</a>
             <a class="dropdown-item smooth text-uppercase hidden-sm-up" href="#atlas">Atlas</a>
             <a class="dropdown-item smooth text-uppercase hidden-md-up" href="#thingsToDo">Things to do </a>
-            <a class="dropdown-item smooth text-uppercase hidden-md-up" href="#gear">Gear</a>
+            <a class="dropdown-item smooth text-uppercase hidden-md-up" href="#MT_Rents">MT. Rents</a>
             <a class="dropdown-item text-uppercase smooth" href="#globalService">Global Service</a>
             <a class="dropdown-item text-uppercase smooth" href="#">SM/AC map</a>
+            <a class="dropdown-item text-uppercase" href="https://aswwu.com/prayitforward">Pray it Forward</a>
             <a class="dropdown-item text-uppercase" href="https://aswwu.com/uploads/ASWWU/ASWWU-Application-2016-2017.docx">Work for ASWWU</a>
           </div>
         </li>
       </ul>
     </nav>
-
     <!-- Offset navbar. -->
     <div id="top" style="width:100%;height:74px;"></div>
 
-    <!-- Video -->
-    <div class="embed-responsive embed-responsive-16by9 full_height_parent">
-      <iframe class="embed-responsive-item full_height_child" src="https://player.vimeo.com/video/162930740?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-
-    <!-- About US -->
-    <section id="aswwu">
+    <div class="parallax-window center-content" style="background-image: url('http://images.akamai.steamusercontent.com/ugc/25087975291817161/4B01A1274CA990A3577CC37E1DAA72F88DE353F8/'); background-size:cover; background-color:#ffef9e;">
       <div class="container">
-        <h1 class="text-xs-center text-uppercase">ASWWU</h1>
-        <hr>
-        <h5 class="text-xs-center text-uppercase">We are aswwu, and so are you.</h5><br />
-        <div class="row ">
-          <div class="col-md-6 offset-md-3">
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-          </div>
-    </section>
-
-    <!-- Mask -->
-    <div id="mask" class="parallax-window center-content" style="background-image: url('https://static.wixstatic.com/media/de317edf9480039c6c4d425f78b91e1c.png/v1/crop/x_0,y_0,w_330,h_331/de317edf9480039c6c4d425f78b91e1c.png'); background-repeat: repeat;background-size:initial; background-color:#99d7ea;">
-      <div class="container">
-        <h1 class="text-white text-uppercase text-giant">The mask </h1><br />
-        <div id="searchInputGroup" class="input-group">
-          <input id="maskSearchQuery" type="text" class="form-control" placeholder="Find the one...">
-          <span class="input-group-btn">
-            <button class="btn btn-secondary btn-outline-secondary giant-link giant-white" type="button" onClick="maskSearch()">Go!</button>
-          </span>
-        </div>
+        <h1 class="text-white text-uppercase text-giant">Things to do</h1>
       </div>
     </div>
 
-    <!-- Upcomming -->
-    <section id="upcomming">
+    <!-- things to do -->
+    <section id="thingsToDo">
       <div class="container">
-        <h1 class="text-xs-center text-uppercase">Upcomming</h1>
-        <hr>
         <div class="row">
-          <div class="col-md-6 offset-md-3 text-xs-center">
+          <div class="col-md-8 offset-md-2">
             <p>
-              No upcomming events just yet.
+              <ul id='listThingsToDo'>
+                <li>
+                  <img class="icon" src="../media/icons/mountains-1.png" /> Backpack the wallowa mountains
+                </li>
+                <li>
+                  <img class="icon" src="../media/icons/forest 2.png" /> Sabbath at lion's park
+                </li>
+                <li>
+                  <img class="icon" src="../media/icons/hills.png" />read in a hammock
+                </li>
+                <li>
+                  <img class="icon" src="../media/icons/mill.png" /> Trails at south fork
+                </li>
+                <li>
+                  <img class="icon" src="../media/icons/mountains.png" /> Sunset at witman mission
+                </li>
+                <li>
+                  <img class="icon" src="../media/icons/fields-1.png" /> Wander andy's prairie
+                </li>
+              </ul>
             </p>
           </div>
-    </section>
-
-    <!-- ASWWU gear -->
-    <div id="gear" class="parallax-window center-content" style="background-image: url('https://static.wixstatic.com/media/035244_a74c8f313159492aadec43c732830d56.jpg/v1/fill/w_1299,h_840,al_c,q_85,usm_0.66_1.00_0.01/035244_a74c8f313159492aadec43c732830d56.jpg'); background-size:cover;">
-      <div class="container">
-        <h1 class="text-white text-uppercase text-giant">ASWWU Gear</h1><br />
-        <a class="btn btn-outline-secondary btn-lg m-x-auto giant-link giant-white" href="https://aswwu.com">I will shop now</a>
-      </div>
-    </div>
-
-    <!-- Global Service -->
-    <section id="globalService">
-      <div class="container text-xs-center">
-        <img class="logo m-x-auto" src="https://aswwu.com/departments/global_service/global_service_logo.png" />
-        <a class="btn btn-outline-secondary btn-lg giant-link giant-black" href="#">Donate Today</a>
       </div>
     </section>
 
-    <!-- Atlas -->
-    <div id="atlas" class="parallax-window center-content" style="background-image: url('http://freedesignfile.com/upload/2014/03/Coffee-beans-5.jpg'); background-repeat: repeat;background-size:initial;">
-      <div class="container">
-        <img class="logo" src="https://aswwu.com/atlas/media/atlasMain.png" /><br />
-        <a class="btn btn-outline-secondary btn-lg m-x-auto giant-link giant-white" href="https://aswwu.com/atlas">Check it out</a>
-      </div>
+    <div class="parallax-window center-content" style="background-image: url('http://images.akamai.steamusercontent.com/ugc/25087975291817161/4B01A1274CA990A3577CC37E1DAA72F88DE353F8/'); background-size:cover; background-color:#ffef9e;">
     </div>
 
-    <!-- Footer  -->
+    <!-- FOOTER -->
     <nav id="footer" class="navbar navbar-dark">
+      <!-- Navbar content -->
       <div class="container">
         <div class="col col-md-4 offset-md-1">
             <img id="footerLogo" class="img-fluid logo" src="https://aswwu.com/media/images/ASWWU_logo.png" />
@@ -195,14 +166,11 @@
 
       </div>
     </nav>
-    
     <!-- All the scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-    <script src="./js/jquery.smooth-scroll.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

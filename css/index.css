@@ -1,0 +1,33 @@
+/*This file contains styles that are only used on the index page. */
+
+/*Mask search */
+#searchInputGroup {
+  max-width: 400px;
+  width:100%;
+}
+
+/*Mask Quick search */
+#maskSearchQuery {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  border-radius: 0;
+  border-width: 3px;
+  border-color: white;
+  transition: color .2s, background-color .2s;
+  font-weight: bold;
+  background-color: transparent;
+  padding-top:12px;
+  padding-bottom: 12px;
+  border-right-width: 0;
+}
+#maskSearchQuery::-webkit-input-placeholder {
+  color: white;
+}
+#maskSearchQuery:focus {
+  background-color: white;
+  color:#999;
+}
+#searchInputGroup span button {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}

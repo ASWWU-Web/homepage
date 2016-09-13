@@ -1,9 +1,4 @@
 $(document).ready(function(){
-  $(".smooth").smoothScroll({
-    offset:-60,
-    speed:"auto",
-    autoCoefficient:2
-  });
   $('#maskSearchQuery').keypress(function (e) {
     if (e.which == 13) {
       if(e.currentTarget.value){

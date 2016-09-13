@@ -1,10 +1,12 @@
-@import 'https://fonts.googleapis.com/css?family=Dosis:300,400|Raleway:400,700';
+/*This css file should contain any css that gets used througout this page and it's subpages. */
+
+@import 'https://fonts.googleapis.com/css?family=Dosis:300,400|Pacifico|Raleway:400,700';
 
 /*Global fonts */
 body{
   font-family: 'Dosis', sans-serif;
 }
-p, a {
+p, a, button {
   font-family: 'Raleway', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -73,33 +75,6 @@ hr {
 
 }
 
-/*Mask search */
-#searchInputGroup {
-  max-width: 400px;
-  width:100%;
-}
-
-/*THings to do*/
-#listThingsToDo {
-  list-style: none;
-  list-style-type: none;
-  font-size: 1.2em;
-}
-
-#listThingsToDo li {
-  padding-bottom: 20px;
-  text-transform: uppercase;
-}
-
-#listThingsToDo li img {
-  margin-right: 30px;
-}
-
-.icon {
-  width: 80px;
-  height:auto;
-}
-
 /*Footer*/
 #footer {
   padding-top: 50px;
@@ -161,6 +136,7 @@ hr {
   align-items: stretch;
 }
 
+/*Giant link styles */
 .giant-link {
   color: white;
   border-radius: 0;
@@ -169,12 +145,19 @@ hr {
   transition: color .2s, border-color .2s;
   font-weight: bold;
 }
-.giant-link:hover, .giant-link:active, .giant-link:focus {
-  color: #d0d0d0!important;
-  background-color: transparent!important;
-  border-color: #d0d0d0!important;
+.giant-white {
+  color: white;
+  border-color: white;
 }
-
+.giant-black {
+  color: #373a3c;
+  border-color: #373a3c;
+}
+.giant-link:hover, .giant-link:active, .giant-link:focus {
+  color: #8c8c8c!important;
+  background-color: transparent!important;
+  border-color: #8c8c8c!important;
+}
 
 .center-content {
   display: flex;
