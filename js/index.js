@@ -11,5 +11,5 @@ $(document).ready(function(){
 
 function maskSearch()  {
   var query = $("#maskSearchQuery").val();
-  window.location = "https:aswwu.com/#/search/" + query;
+  window.location = "https://aswwu.com/#/search/" + query;
 }
