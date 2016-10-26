@@ -45,6 +45,22 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
 }
 
+#aswwuLogo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://aswwu.com/media/background.php);
+  background-size:cover;
+  height:95vh;
+  width: 100%;
+}
+#aswwuLogo img{
+  width: 100%;
+max-width: 800px;
+height: auto;
+padding: 0 20px 0 20px;
+}
+
 /*Section */
 section {
   padding-top: 20px;
