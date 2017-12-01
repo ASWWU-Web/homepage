@@ -1,5 +1,5 @@
 {
-  "name": "mask",
+  "name": "homepage",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" ",
@@ -9,7 +9,7 @@
     "tsc:w": "tsc -w",
     "build": "webpack -p --progress",
     "webpack": "webpack",
-    "push": "npm run build && scp -r app/* aswwu.com:/var/www/html/mask/app/ && scp dist/* aswwu.com:/var/www/html/mask/dist/"
+    "push": "npm run build && scp -r app/* aswwu.com:/var/www/html/homepage/app/ && scp dist/* aswwu.com:/var/www/html/homepage/dist/"
   },
   "licenses": [
     {
