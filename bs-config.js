@@ -24,7 +24,9 @@ module.exports = {
         routes: {
             "/mask/node_modules": "./node_modules",
             "/mask/app": "./app",
-            "/mask/css": "./app/css",
+            "/css": "./css",
+            "/js": "./js",
+            "/media": "./media",
             "/mask/":"./dist"
         }
     }
