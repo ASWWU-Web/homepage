@@ -1,21 +1,2 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let result of shownResults" class="columns col-lg-3">
-      <profile-sm [searchResult]='result' [year]="year" class=""></profile-sm>
-    </div>
-  </div>
-  <div style="padding-bottom:50px;" class="row">
-    <div *ngIf="!(shown >= results.length)" class="col d-flex justify-content-center">
-      <button (click)="showMore()" class="btn btn-primary">Show More</button>
-    </div>
-    <div *ngIf="results.length == 0" class="col d-flex justify-content-center">
-      No results found...  <a [routerLink]="['/search/']">Super Search?</a>
-    </div>
-  </div>
-  <div *ngIf="results.length == 0 && noResultsPrompt == undefined" class="col d-flex justify-content-center">
-    No results found...  <a [routerLink]="['/search/']">Super Search?</a>
-  </div>
-  <div *ngIf="results.length == 0 && noResultsPrompt != undefined" class="col d-flex justify-content-{{noResultsJust}}">
-    {{noResultsPrompt}}
-  </div>
-</div>
+<p>Example upcoming event item  <span class="oi oi-arrow-circle-right"></span></p>
+<!-- <p *ngFor="let items of result">{{items.summary}}  <span class="oi oi-arrow-circle-right"></span></p> -->

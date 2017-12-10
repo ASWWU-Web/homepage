@@ -4,6 +4,8 @@ import { HttpModule }    from '@angular/http';
 import { NgbModule }     from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent }  from './app.component';
+import { UpcomingComponent } from './upcoming/upcoming.component';
+import { CalendarService } from './services/calendar.service';
 
 @NgModule({
   imports: [
@@ -11,9 +13,8 @@ import { AppComponent }  from './app.component';
     HttpModule,
     NgbModule.forRoot(),
   ],
-  declarations: [
-    AppComponent
-  ],
+  providers: [ CalendarService ],
+  declarations: [ AppComponent, UpcomingComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

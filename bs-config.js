@@ -22,12 +22,12 @@ module.exports = {
             })
         ],
         routes: {
-            "/mask/node_modules": "./node_modules",
-            "/mask/app": "./app",
+            "/node_modules": "./node_modules",
+            "/app": "./app",
             "/css": "./css",
             "/js": "./js",
             "/media": "./media",
-            "/mask/":"./dist"
+            "/homepage/":"./dist"
         }
     }
 };
