@@ -11,7 +11,7 @@ import { CalendarService } from './services/calendar.service';
   imports: [
     BrowserModule,
     HttpModule,
-    NgbModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [ CalendarService ],
   declarations: [ AppComponent, UpcomingComponent ],

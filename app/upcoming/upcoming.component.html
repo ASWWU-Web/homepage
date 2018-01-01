@@ -1,5 +1,7 @@
-<p>Example upcoming event item  <span class="oi oi-arrow-circle-right"></span></p>
-
-<ul>
-  <li *ngFor="let result of results">{{result.summary}}</li>
-</ul>
+<div *ngIf="ready">
+  <table class="table text-xs-left">
+    <tr *ngFor="let element of upcomings">
+      <td>{{element.summary}}</td>
+    </tr>
+  </table>
+</div>

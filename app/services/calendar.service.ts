@@ -1,15 +1,16 @@
 import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
+import { Upcomings } from '../upcoming/upcoming.model';
 
 @Injectable()
 export class CalendarService {
 
-  constructor(private http: Http) { }
-
   private upcomingsUrl = 'https://content.googleapis.com/calendar/v3/calendars/3p9fpi388oqq94pqvm5a2nusp4%40group.calendar.google.com/events?maxResults=10&orderBy=startTime&singleEvents=true&key=AIzaSyDawSineZAnnuDKMQgHiaVt6KuRe4xAzAw';
 
-  public getUpcomings() {
+  constructor(private http: Http) {  }
+
+  getUpcomings() {
     return this.http.get(this.upcomingsUrl).toPromise();
   }
 }
