@@ -6,15 +6,21 @@ import { Upcomings } from '../upcoming/upcoming.model';
 @Injectable()
 export class CalendarService {
 
-  private upcomingsUrl = 'https://content.googleapis.com/calendar/v3/calendars/3p9fpi388oqq94pqvm5a2nusp4%40group.calendar.google.com/events?maxResults=10&orderBy=startTime&singleEvents=true&key=AIzaSyDawSineZAnnuDKMQgHiaVt6KuRe4xAzAw';
+  private calendarID = "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com";
+  private maxResults = 10;
+  private orderBy = "startTime";
+  private singleEvents = true;
+  private key = "AIzaSyDawSineZAnnuDKMQgHiaVt6KuRe4xAzAw";
+
+  private upcomingsUrl = 'https://content.googleapis.com/calendar/v3/calendars/' + this.calendarID + '/events?' + 'maxResults=' + this.maxResults + '&orderBy=' + this.orderBy + '&singleEvents=' + this.singleEvents + '&timeMin=' + this.timeMin() + '&key=' + this.key;
 
   constructor(private http: Http) {  }
 
-  getUpcomings() {
+  public getUpcomings() {
     return this.http.get(this.upcomingsUrl).toPromise();
   }
-}
 
-// part of the future get request:
-// # include timeMin " Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. "
-// GET https://content.googleapis.com/calendar/v3/calendars/3p9fpi388oqq94pqvm5a2nusp4%40group.calendar.google.com/events?maxResults=10&orderBy=startTime&singleEvents=true&key=AIzaSyDawSineZAnnuDKMQgHiaVt6KuRe4xAzAw
+  private timeMin(){
+    return new Date().toISOString();
+  }
+}
