@@ -29,7 +29,7 @@ export class UpcomingComponent {
       for (const key in this.results) {
         if (this.results.hasOwnProperty(key)) {
           if (this.results[key].summary.slice(0,5) === "ASWWU"){ 
-            this.upcomings.push(new Upcomings(this.results[key].summary, this.results[key].start));
+            this.upcomings.push(new Upcomings(this.results[key].summary, this.results[key].htmlLink, this.results[key].start));
           }
         }
       }

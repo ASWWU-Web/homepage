@@ -3,14 +3,15 @@
 
 export class Upcomings {
   summary: string;
-  // htmlLink: string;
+  htmlLink: string;
   startDate: string;
   // startTime: string;
   // endDate: string;
   // endTime: string;
 
-  constructor(summary:string, start){
+  constructor(summary:string, htmlLink:string, start){
     this.summary = summary.slice(6);
+    this.htmlLink = htmlLink;
     if(start.hasOwnProperty("date")){
       // this.startDate = start.date;
       this.startDate = this.extractDate(start.date);
