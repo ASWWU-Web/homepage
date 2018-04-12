@@ -1,0 +1,9 @@
+<div *ngIf="ready">
+    <table class="table text-xs-left">
+      <tr *ngFor="let element of upcomings">
+        <td>{{element.summary}}</td>
+        <td>{{element.startDate}}</td>
+        <td><a href="{{element.htmlLink}}" target="blank"><span class="fas fa-calendar-plus" style="color:black" alt="Add to Google Calendar"></span></a></td>
+      </tr>
+    </table>
+</div>
