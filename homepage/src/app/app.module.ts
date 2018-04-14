@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CalendarService } from './calendar.service';
+import { UserBubbleComponent } from './user-bubble/user-bubble.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CalendarService } from './calendar.service';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    UpcomingComponent
+    UpcomingComponent,
+    UserBubbleComponent
   ],
   imports: [
     BrowserModule,
