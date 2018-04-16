@@ -14,12 +14,14 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CalendarService } from './calendar.service';
 import { UserBubbleComponent } from './user-bubble/user-bubble.component';
 import { HomeComponent } from './home/home.component';
+import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
+    MobileNavComponent,
     FooterComponent,
     UpcomingComponent,
     UserBubbleComponent,
