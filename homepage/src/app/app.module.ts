@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CalendarService } from './calendar.service';
@@ -15,7 +15,7 @@ import { UserBubbleComponent } from './user-bubble/user-bubble.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    NavBarComponent,
     FooterComponent,
     UpcomingComponent,
     UserBubbleComponent

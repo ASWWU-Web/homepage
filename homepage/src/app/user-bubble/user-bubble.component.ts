@@ -11,7 +11,7 @@ import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
 
 @Component({
   selector: 'app-user-bubble',
-  template: '<p> user bubble works </p>'
+  template: '<p> user bubble works </p>',
   /**`<div *ngIf="isLoggedIn" class="contain">
                   <div id="bubble-popup" ngbDropdown placement="bottom-right">
                       <button id="bubbleicon" ngbDropdownToggle>
