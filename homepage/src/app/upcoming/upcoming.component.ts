@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CalendarService } from '../calendar.service';
-import { UpcomingModel } from '../upcoming.model';
+import { CalendarService } from '../services/calendar.service';
+import { UpcomingModel } from './upcoming.model';
 
 @Component({
   selector: 'app-upcoming',
