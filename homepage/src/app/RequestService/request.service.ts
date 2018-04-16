@@ -10,7 +10,7 @@ import { HttpClientModule, HttpClient, HttpParams, HttpHeaders } from '@angular/
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { User } from './user.model';
 import { Subscription } from 'rxjs/Subscription';
 
