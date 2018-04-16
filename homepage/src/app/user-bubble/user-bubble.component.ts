@@ -5,14 +5,13 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RequestService } from '../request.service';
+import { RequestService } from '../RequestService/request.service';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
 
 @Component({
   selector: 'app-user-bubble',
-  template: '<p> user bubble works </p>'
-  /**`<div *ngIf="isLoggedIn" class="contain">
+  template: `<div *ngIf="isLoggedIn" class="contain">
                   <div id="bubble-popup" ngbDropdown placement="bottom-right">
                       <button id="bubbleicon" ngbDropdownToggle>
                           <div *ngIf="(profile?.photo == 'images/mask_unknown.png' || profile?.photo == 'None' || !profile?.photo)" (click)="displayUserOptions()" class="btn btn-default btn-circle">{{profile?.username.charAt(0).toUpperCase()}}</div>
@@ -27,7 +26,7 @@ import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
                   </div>
              </div>
              <a *ngIf="!isLoggedIn" class="btn btn-primary float-right" [href]="'https://saml.aswwu.com/?redirectURI=/mask'+ router.url">Log in</a>
-`,*/
+`,
   styleUrls: ['user-bubble.component.css'],
 })
 
