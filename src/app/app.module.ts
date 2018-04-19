@@ -15,6 +15,7 @@ import { CalendarService } from './services/calendar.service';
 import { UserBubbleComponent } from './user-bubble/user-bubble.component';
 import { HomeComponent } from './home/home.component';
 import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
+import { SuperDuperComponent } from './super-duper/super-duper.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
     FooterComponent,
     UpcomingComponent,
     UserBubbleComponent,
-    HomeComponent
+    HomeComponent,
+    SuperDuperComponent
   ],
   imports: [
     BrowserModule,
