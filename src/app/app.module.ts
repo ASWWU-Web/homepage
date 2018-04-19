@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http'
 import { HttpClientModule } from '@angular/common/http'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { RequestService } from './RequestService/requests';
+import { RequestService } from './services/services';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';

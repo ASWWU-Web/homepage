@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { UpcomingModel } from '../upcoming/upcoming.model';
+import { UpcomingModel } from '../models/models';
 
 @Injectable()
 export class CalendarService {
