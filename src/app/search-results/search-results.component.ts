@@ -38,4 +38,34 @@ export class SearchResultsComponent {
       }
     ]
   };
+  @Input() pageData: any = {
+    "results": [
+        {
+            "description": "Wow, look at this new lorem ipsum page!",
+            "tags": [],
+            "visible": true,
+            "owner": "sheldon.woodward",
+            "cover_image": null,
+            "category": "Event",
+            "title": "test",
+            "url": "new",
+            "author": "ryan.rabello",
+            "created": "2018-04-03T09:46:39.411560",
+            "department": "test"
+        },
+        {
+            "description": "Wow, look at this new lorem ipsum page!",
+            "tags": [],
+            "visible": true,
+            "owner": "sheldon.woodward",
+            "cover_image": null,
+            "category": "Event",
+            "title": "test",
+            "url": "new2",
+            "author": "ryan.rabello",
+            "created": "2018-04-03T11:25:11.206074",
+            "department": "test"
+        }
+    ]
+  }
 }

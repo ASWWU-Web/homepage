@@ -15,9 +15,9 @@ import { CalendarService } from './services/calendar.service';
 import { UserBubbleComponent } from './user-bubble/user-bubble.component';
 import { HomeComponent } from './home/home.component';
 import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
-import { SearchResultsComponent } from './search-results/search-results.component'
-
+import { PageCardComponent } from './page-card/page-card.component'
 
 @NgModule({
   declarations: [
@@ -28,8 +28,9 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     UpcomingComponent,
     UserBubbleComponent,
     HomeComponent,
+    SearchResultsComponent,
     ProfileCardComponent,
-    SearchResultsComponent
+    PageCardComponent
   ],
   imports: [
     BrowserModule,
