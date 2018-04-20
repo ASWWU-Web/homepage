@@ -15,6 +15,8 @@ import { CalendarService } from './services/calendar.service';
 import { UserBubbleComponent } from './user-bubble/user-bubble.component';
 import { HomeComponent } from './home/home.component';
 import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { SearchResultsComponent } from './search-results/search-results.component'
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
     FooterComponent,
     UpcomingComponent,
     UserBubbleComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileCardComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,10 @@ import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
     HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
+      {
+        'path': 'test',
+        component: SearchResultsComponent
+      },
       {
         'path': '',
         component: HomeComponent
