@@ -67,5 +67,41 @@ export class SearchResultsComponent {
             "department": "test"
         }
     ]
-  }
+  };
+  @Input() jobData: any = {
+    "forms": [
+      {
+          "image": "",
+          "visibility": false,
+          "jobID": 1,
+          "job_description": "Doesn't Really matter",
+          "department": "",
+          "job_name": "ASWWU Generic"
+      },
+      {
+          "image": "",
+          "visibility": false,
+          "jobID": 4,
+          "job_description": "A competent organizer and administrative assistant ready to help where help is needed. \n\nResponsibilities:\n-Facilitate the aswwu@wallawalla.edu email\n-Maintain scheduling functions\n-Compile meeting agendas\n-Keeping the ASWWU calendar updated\n-Making sure ASWWU.com is up-to-date\n\n*Cabinet Position",
+          "department": "Executive",
+          "job_name": "Executive Secretary"
+      },
+      {
+          "image": "",
+          "visibility": false,
+          "jobID": 5,
+          "job_description": "An individual who works closely with the EVP to prepare for Senate meetings and assists with other necessary tasks.",
+          "department": "Executive",
+          "job_name": "Executive Assistant"
+      },
+      {
+          "image": "",
+          "visibility": false,
+          "jobID": 6,
+          "job_description": "An individual who records minutes during Senate meetings, taking care to capture all the important details of the meeting in their notes. \nOnce organized, the Senate Secretary shares the minutes with the Senators before their next meeting.\n\nResponsibilities:\n-Take Minutes\n-Organize Them\n-Communicate with the EVP\n-Attend Senate Each Week\n\nNecessary Skills:\n-Rapid Typing",
+          "department": "Senate",
+          "job_name": "Senate Secretary"
+      },
+    ]
+  };
 }

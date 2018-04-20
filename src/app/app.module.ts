@@ -17,7 +17,8 @@ import { HomeComponent } from './home/home.component';
 import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
-import { PageCardComponent } from './page-card/page-card.component'
+import { PageCardComponent } from './page-card/page-card.component';
+import { JobCardComponent } from './job-card/job-card.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PageCardComponent } from './page-card/page-card.component'
     HomeComponent,
     SearchResultsComponent,
     ProfileCardComponent,
-    PageCardComponent
+    PageCardComponent,
+    JobCardComponent
   ],
   imports: [
     BrowserModule,
