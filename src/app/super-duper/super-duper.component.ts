@@ -29,13 +29,13 @@ export class SuperDuperComponent implements OnInit {
   ngOnInit() {
   }
 
-  search = (text$: Observable<string>) =>
+  search = (text$: Observable<string>) => 
     text$
       .debounceTime(300)
       .distinctUntilChanged()
       .do(() => this.searching = true)
       .switchMap(term =>
-        this._service.search(term)
+        this._service.SearchAndReturnObservableArray(term)
           .do(() => this.searchFailed = false)
           .catch(() => {
             this.searchFailed = true;
@@ -43,5 +43,4 @@ export class SuperDuperComponent implements OnInit {
           }))
       .do(() => this.searching = false)
       .merge(this.hideSearchingWhenUnsubscribed);
-
 }

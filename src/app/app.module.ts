@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
-import { HttpModule } from '@angular/http'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { RequestService } from './services/services';
+import { RequestService, SuperDuperService } from './services/services';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -33,6 +34,7 @@ import { SuperDuperComponent } from './super-duper/super-duper.component';
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -41,7 +43,7 @@ import { SuperDuperComponent } from './super-duper/super-duper.component';
       }
     ])
   ],
-  providers: [RequestService, CalendarService],
+  providers: [RequestService, CalendarService, SuperDuperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
