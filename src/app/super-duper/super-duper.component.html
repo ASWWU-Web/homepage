@@ -1,9 +1,11 @@
 <div id="searchInputGroup" class="input-group mx-auto">
   <ng-template #rt let-r="result" let-t="term">
-    {{ r.username}}{{r.full_name}}
+    <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
+    {{r.main}}
   </ng-template>
-  
-  <input [resultTemplate]="rt" id="maskSearchQuery" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find the one...">
+
+    <input [resultTemplate]="rt" id="maskSearchQuery" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Find the one...">
+
 
   <!-- <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Wikipedia search" /> -->
   <!-- <span *ngIf="searching">searching...</span> -->

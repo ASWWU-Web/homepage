@@ -77,7 +77,18 @@ export class SuperDuperService {
 
   SearchAndReturnObservableArray(query) {
     const queryUri = this.parseQuery(query);
-    return this.requests.getObservable( this.maskUri + queryUri ).map(response => response.results);//.map(data=>data.map(data=>data.full_name));
+    return this.requests.getObservable( this.maskUri + queryUri ).map(response => {
+      let toReturn = response.results.map(result => {
+        return {
+          'main': result.full_name,
+          'source': 'Mask',
+          'link': 'somefakeurlfortesting',
+          'top': false,
+        };
+      });
+      toReturn[0].top = true;
+      return toReturn;
+    });
   }
 
 
