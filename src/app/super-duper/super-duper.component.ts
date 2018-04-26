@@ -43,4 +43,6 @@ export class SuperDuperComponent implements OnInit {
           }))
       .do(() => this.searching = false)
       .merge(this.hideSearchingWhenUnsubscribed);
+
+  formatter = (x: {main: string}) => x.main;
 }

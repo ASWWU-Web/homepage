@@ -41,11 +41,15 @@
     background-color: grey !important;
     color: white;
     font-weight: bold;
-    margin-top: -.25rem;
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: .75rem;
-    padding-top: .0rem;
-    padding-bottom: .0rem;
-    margin-bottom: .25rem;
+    padding: .15rem .5rem;
+}
+
+#searchInputGroup >>> .dropdown-item {
+    padding:0px;
+}
+
+.result {
+    padding-left: 1.5rem;
+    padding-top:.25rem;
+    padding-bottom:.25rem;
 }
