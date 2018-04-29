@@ -1,8 +1,20 @@
 <!-- ASWWU Logo -->
-<div id="aswwuLogo" class="center-content">
+<div id="aswwuLogo" class="center-content" [ngStyle]="{'background-image': bgLink}">
     <div class="container">
       <div class="center-content w-100">
-        <img src="https://aswwu.com/media/images/ASWWU_logo_full.png" />
+        <img class="aswwu-logo" src="https://aswwu.com/media/images/ASWWU_logo_full.png" />
+        <!-- <svg height="0" xmlns="http://www.w3.org/2000/svg">
+          <filter id="drop-shadow">
+              <feGaussianBlur in="https://aswwu.com/media/images/ASWWU_logo_full.png" stdDeviation="4"/>
+              <feOffset dx="12" dy="12" result="offsetblur"/>
+              <feFlood flood-color="rgba(0,0,0,0.5)"/>
+              <feComposite in2="offsetblur" operator="in"/>
+              <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="https://aswwu.com/media/images/ASWWU_logo_full.png"/>
+              </feMerge>
+          </filter>
+        </svg> -->
       </div>
         <app-super-duper class="center-content w-100" style="margin-top: 3rem;"></app-super-duper>
     </div>

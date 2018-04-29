@@ -13,11 +13,16 @@
     border-color: white;
     transition: color .2s, background-color .2s;
     font-weight: bold;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, .3);
     padding-top:12px;
     padding-bottom: 12px;
     border-right-width: 0;
 }
+
+#maskSearchButton {
+    background-color: rgba(0, 0, 0, .3) !important;
+}
+
 #maskSearchQuery::-webkit-input-placeholder {
     color: white;
 }
