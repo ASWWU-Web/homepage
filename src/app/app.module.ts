@@ -18,6 +18,10 @@ import { HomeComponent } from './home/home.component';
 import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
 import { SuperDuperComponent } from './super-duper/super-duper.component';
 
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { PageCardComponent } from './page-card/page-card.component';
+import { JobCardComponent } from './job-card/job-card.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { SuperDuperComponent } from './super-duper/super-duper.component';
     UpcomingComponent,
     UserBubbleComponent,
     HomeComponent,
-    SuperDuperComponent
+    SuperDuperComponent,
+    SearchResultsComponent,
+    ProfileCardComponent,
+    PageCardComponent,
+    JobCardComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +45,10 @@ import { SuperDuperComponent } from './super-duper/super-duper.component';
     FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
+      {
+        'path': 'test',
+        component: SearchResultsComponent
+      },
       {
         'path': '',
         component: HomeComponent
