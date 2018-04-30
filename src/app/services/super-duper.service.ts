@@ -22,13 +22,13 @@ export class SuperDuperService {
 
   constructor(private requests: RequestService) { }
 
-  parseQuery(query: string): string {
+  private parseQuery(query: string): string {
     // TODO: switch regex with the method used in pages search component
     query = query.toLowerCase().replace(/[!@#$%^&*()=+]/g, '').replace(/[_ -]/g, '%20');
     return query;
   }
 
-  filterJobs(query, item) {
+  private filterJobs(query, item) {
     query = query.toLowerCase();
     const visible = item.visibility;
     const inDescription = false;//item.job_description.search(query) !== -1;
@@ -37,7 +37,7 @@ export class SuperDuperService {
     return show;
   }
 
-  mapMask( response ) {
+  private mapMask( response ) {
     let toReturn = response.results.slice(0, 3).map(result => {
       return {
         'main': result.full_name,
@@ -51,7 +51,7 @@ export class SuperDuperService {
     return toReturn;
   }
 
-  mapJobs( query, response ) {
+  private mapJobs( query, response ) {
     let toReturn = response.forms.filter(item => this.filterJobs(query, item)).slice(0, 3).map(result => {
       return {
         'main': result.job_name,
@@ -65,7 +65,7 @@ export class SuperDuperService {
     return toReturn;
   }
 
-  mapPages( response ) {
+  private mapPages( response ) {
     let toReturn = response.results.slice(0, 3).map(result => {
       return {
         'main': result.title,
@@ -91,6 +91,15 @@ export class SuperDuperService {
     return toReturn;
   }
 
+  SearchAndReturnObservableResults(query) {
+    const queryUri = this.parseQuery(query);
+    let maskObservable = this.requests.getObservable( this.maskUri + queryUri ).map(response => response.results).catch(err => of([]));
+    let pagesObservable = this.requests.getObservable( this.pagesUri ).map(response => response.results).catch(err => of([]));
+    let jobsObservable = this.requests.getObservable( this.jobsUri ).map(response => response.results.filter(result => this.filterJobs(query, result))).catch(err => of([])); // don't parseQuery()
+    // uses: https://stackoverflow.com/questions/44141569/how-to-concat-two-observable-arrays-into-a-single-array
+    let toReturn = Observable.forkJoin(maskObservable, pagesObservable, jobsObservable);
+    return toReturn;
+  }
 
 
 }

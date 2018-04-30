@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -19,15 +21,16 @@ import { SuperDuperService } from '../services/services';
 })
 export class SuperDuperComponent implements OnInit {
 
-  model: any;
+  @Input() model: string = null;
   searching = false;
   searchFailed = false;
   hideSearchingWhenUnsubscribed = new Observable(() => () => this.searching = false);
 
-  constructor(private _service: SuperDuperService) { }
+  searchPageroute = 'search';
 
-  ngOnInit() {
-  }
+  constructor(private _service: SuperDuperService, private router: Router) { }
+
+  ngOnInit() {}
 
   search = (text$: Observable<string>) => 
     text$
@@ -45,4 +48,15 @@ export class SuperDuperComponent implements OnInit {
       .merge(this.hideSearchingWhenUnsubscribed);
 
   formatter = (x: {main: string}) => x.main;
+
+  maskSearch(userInput: string) {
+    // re-navigate with a parameter
+    this.router.navigate([this.searchPageroute, userInput]);
+  }
+
+  goToResult(resultLink) {
+    // todo follow the link
+  }
+
 }
+

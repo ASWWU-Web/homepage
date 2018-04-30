@@ -46,7 +46,11 @@ import { JobCardComponent } from './job-card/job-card.component'
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
-        'path': 'test',
+        'path': 'search/:query',
+        component: SearchResultsComponent
+      },
+      {
+        'path': 'search',
         component: SearchResultsComponent
       },
       {

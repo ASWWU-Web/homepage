@@ -1,12 +1,12 @@
 <div id="searchInputGroup" class="input-group mx-auto">
   <ng-template #rt let-r="result" let-t="term">
     <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
-    <div class="result">
+    <div (click)="goToResult(r)" class="result">
       {{r.main}}
     </div>
   </ng-template>
 
-    <input [resultTemplate]="rt" id="maskSearchQuery" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find the one...">
+    <input #maskInput (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" id="maskSearchQuery" type="text" class="form-control" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find the one...">
 
 
   <!-- <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Wikipedia search" /> -->
@@ -14,6 +14,6 @@
   <!-- <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div> -->
 
   <span class="input-group-btn">
-    <button id="maskSearchButton" class="btn btn-secondary btn-outline-secondary giant-link giant-white" type="button" onClick="maskSearch()">Go!</button>
+    <button id="maskSearchButton" class="btn btn-secondary btn-outline-secondary giant-link giant-white" type="button" (click)="maskSearch(maskInput.value)">Go!</button>
   </span>
 </div>
