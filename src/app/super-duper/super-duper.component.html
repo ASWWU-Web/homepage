@@ -1,7 +1,7 @@
 <div id="searchInputGroup" class="input-group mx-auto">
   <ng-template #rt let-r="result" let-t="term">
     <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
-    <div (click)="goToResult(r)" class="result">
+    <div (click)="goToResult(r.link)" class="result">
       {{r.main}}
     </div>
   </ng-template>

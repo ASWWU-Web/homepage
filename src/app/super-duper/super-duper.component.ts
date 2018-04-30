@@ -55,7 +55,7 @@ export class SuperDuperComponent implements OnInit {
   }
 
   goToResult(resultLink) {
-    // todo follow the link
+    window.location.href = resultLink;
   }
 
 }
