@@ -2,14 +2,13 @@
   "name": "homepage",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" ",
-    "serve": "tsc && concurrently \"tsc -w\" \"webpack-dev-server -p --inline --progress\"",
-    "lite": "tsc && concurrently \"tsc -w\" \"webpack -w\" \"lite-server -c bs-config.js\"",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "build": "webpack -p --progress",
-    "webpack": "webpack",
-    "push": "npm run build && scp -r app/* aswwu.com:/var/www/html/homepage/app/ && scp dist/* aswwu.com:/var/www/html/homepage/dist/"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build -prod --base-href / --deploy-url /",
+    "build:dev": "ng build -prod --base-href /dev --deploy-url /dev",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "licenses": [
     {
