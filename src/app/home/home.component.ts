@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  bgLink = 'https://aswwu.com/media/background.php';
+
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }

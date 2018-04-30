@@ -1,0 +1,30 @@
+<div class="card mb-4 clickable" (click)="navigate(page.url)">
+  <!-- image -->
+  <img *ngIf="page.cover_image != null" class="card-img-top" src="{{getCoverImage(page.cover_image)}}"/>
+  <!-- card content -->
+  <div class="p-4 text-center">
+    <!-- title and description -->
+    <div class="card-block">
+      <h4 class="card-title">{{page['title']}}</h4>
+      <p class="card-text">{{page['description']}}</p>
+    </div>
+    <!-- metadata -->
+    <hr *ngIf="showMeta == 1"/>
+    <div *ngIf="showMeta == 1" class="card-block row">
+      <!-- name and date -->
+      <div class="col">
+        <p class="text-center mb-1"><a class="text-muted" href="{{authorProfile()}}">{{getAuthor()}}</a></p>
+        <p class="text-center text-muted mb-0">{{getDateCreated()}}</p>
+      </div>
+      <!-- user bubble -->
+      <div class="col-4" *ngIf="!(profile?.photo == 'images/mask_unknown.png' || profile?.photo == 'None' || !profile?.photo)">
+        <button id="bubbleicon">
+          <a href="{{authorProfile()}}">
+            <!-- <img *ngIf="(profile?.photo == 'images/mask_unknown.png' || profile?.photo == 'None' || !profile?.photo)" class="btn btn-default btn-circle" src="{{getPhotoLink('None')}}"> -->
+            <img class="btn btn-default btn-circle" src="{{getPhotoLink(profile.photo)}}">
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

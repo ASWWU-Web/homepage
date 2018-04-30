@@ -1,18 +1,22 @@
 <!-- ASWWU Logo -->
-<div id="aswwuLogo" class="center-content">
+<div id="aswwuLogo" class="center-content" [ngStyle]="{'background-image': bgLink}">
     <div class="container">
       <div class="center-content w-100">
-        <img src="https://aswwu.com/media/images/ASWWU_logo_full.png" />
+        <img class="aswwu-logo" src="https://aswwu.com/media/images/ASWWU_logo_full.png" />
+        <!-- <svg height="0" xmlns="http://www.w3.org/2000/svg">
+          <filter id="drop-shadow">
+              <feGaussianBlur in="https://aswwu.com/media/images/ASWWU_logo_full.png" stdDeviation="4"/>
+              <feOffset dx="12" dy="12" result="offsetblur"/>
+              <feFlood flood-color="rgba(0,0,0,0.5)"/>
+              <feComposite in2="offsetblur" operator="in"/>
+              <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="https://aswwu.com/media/images/ASWWU_logo_full.png"/>
+              </feMerge>
+          </filter>
+        </svg> -->
       </div>
-      <div class="center-content w-100" style="margin-top: 3rem;">
-            <div id="searchInputGroup" class="input-group mx-auto">
-              <input id="maskSearchQuery" type="text" class="form-control" placeholder="Find the one...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary btn-outline-secondary giant-link giant-white" type="button" onClick="maskSearch()">Go!</button>
-                </span>
-            </div>
-
-      </div>
+        <app-super-duper class="center-content w-100" style="margin-top: 3rem;"></app-super-duper>
     </div>
 </div>
 
@@ -58,13 +62,13 @@
 <!-- ASWWU gear -->
 <div id="gear" class="parallax-window center-content" style="background-image: url('https://static.wixstatic.com/media/035244_a74c8f313159492aadec43c732830d56.jpg/v1/fill/w_1299,h_840,al_c,q_85,usm_0.66_1.00_0.01/035244_a74c8f313159492aadec43c732830d56.jpg'); background-size:cover;">
   <div class="container">
-    <h1 class="text-white text-uppercase text-giant">ASWWU Gear</h1><br />
+    <h1 class="text-white text-uppercase text-giant">Mountain Rents</h1><br />
     <a class="btn btn-outline-secondary btn-lg m-x-auto giant-link giant-white" href="https://my-first-store-that-is-so-awesome.myshopify.com/">I will shop now</a>
   </div>
 </div>
 
 <!-- Collegian & Global Service-->
-<section id="collegian"><div class="row">
+<section id="collegian" class="container"><div class="row">
   <div id="collegianContainer" class="container text-center col-md-6">
     <img class="logo" src="../../assets/collegian_logo.png" />
     <br />

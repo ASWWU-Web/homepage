@@ -14,6 +14,9 @@ import { environment } from '../../environments/environment';
 import { User } from '../models/models';
 import { Subscription } from 'rxjs/Subscription';
 
+// for getObservable
+import {of} from 'rxjs/observable/of';
+
 @Injectable()
 export class RequestService {
   authUser: User;
@@ -100,6 +103,14 @@ export class RequestService {
       err => (catchError ? catchError(err) : console.error(err))
       );
   }
+
+  // for use with typeaheads
+  getObservable(uri: string): Observable<any> {
+    const req = this.createRequest(uri);
+    this.verify();
+    return this.http.get(req.url, req.options);
+  }
+
 
   post(uri: string, data: any, afterRequest, catchError): void {
     let body = JSON.stringify(data);
