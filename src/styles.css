@@ -49,7 +49,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(https://aswwu.com/media/background.php);
+  transition: background-image 2s;
+  background: black;
   background-size:cover;
   height:95vh;
   width: 100%;
