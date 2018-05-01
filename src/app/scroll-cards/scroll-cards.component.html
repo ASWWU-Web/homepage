@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col p-0">
+    <button class="scroll-button p-0" type="button" (click)="scroll(true)"><i class="fa fa-3x fa-caret-left"></i></button>
+  </div>
+  <div id="scrolling-wrapper-{{uniqueID}}" class="scrolling-wrapper col-10 col-md-11 col-xl-11">
+    <page-card *ngFor="let page of requestData; let i=index;" id="{{i}}-{{uniqueID}}" class="scroll-card col-xs-12 col-md-6 col-xl-4" [page]="page" [showMeta]="showMeta"></page-card>
+  </div>
+  <div class="col p-0">
+    <button class="scroll-button button-outline-secondary p-0" type="button" (click)="scroll(false)"><i class="fa fa-3x fa-caret-right"></i></button>
+  </div>
+</div>

@@ -1,13 +1,18 @@
-<app-super-duper [model]="parameterSearch"></app-super-duper>
-
-<div *ngIf="resultsReady" class="card-columns">
-  <div *ngFor="let profile of profileData">
-    <app-profile-card [profile]="profile"></app-profile-card>
+<div class="page-container">
+  <!-- header -->
+  <div class="w-100 bg-success mb-5 p-4">
+    <h1 class="text-center text-light text-uppercase m-0" style="line-height:6.3rem;">Search</h1>
   </div>
-  <div *ngFor="let page of pageData">
-    <app-page-card [page]="page" showMeta="1"></app-page-card>
-  </div>
-  <div *ngFor="let job of jobData">
-    <app-job-card [job]="job"></app-job-card>
+  <!-- content -->
+  <div class="container">
+    <app-super-duper [model]="parameterSearch"></app-super-duper>
+    <div *ngIf="resultsReady">
+      <h1 class="text-center">Users</h1>
+      <scroll-cards [requestData]="pageData" showMeta="1"></scroll-cards>
+      <h1 class="text-center">Pages</h1>
+      <scroll-cards [requestData]="pageData" showMeta="1"></scroll-cards>
+      <h1 class="text-center">Jobs</h1>
+      <scroll-cards [requestData]="pageData" showMeta="1"></scroll-cards>
+    </div>
   </div>
 </div>

@@ -21,7 +21,8 @@ import { SuperDuperComponent } from './super-duper/super-duper.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { PageCardComponent } from './page-card/page-card.component';
-import { JobCardComponent } from './job-card/job-card.component'
+import { JobCardComponent } from './job-card/job-card.component';
+import { ScrollCardsComponent } from './scroll-cards/scroll-cards.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { JobCardComponent } from './job-card/job-card.component'
     SearchResultsComponent,
     ProfileCardComponent,
     PageCardComponent,
-    JobCardComponent
+    JobCardComponent,
+    ScrollCardsComponent
   ],
   imports: [
     BrowserModule,
