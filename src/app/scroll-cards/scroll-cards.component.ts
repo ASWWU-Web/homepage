@@ -7,16 +7,36 @@ import { Component, Input, OnChanges } from '@angular/core';
 })
 
 export class ScrollCardsComponent {
-  @Input() requestData: any;
-  @Input() showMeta: boolean;
+  @Input() profileData: any = [];
+  @Input() pageData: any = [];
+  @Input() jobData: any = [];
+  @Input() showMeta: boolean = false;
   @Input() sort: boolean = false;
   uniqueID: string = Math.random().toString(36).substr(2, 9);
 
   ngOnChanges() {
-    console.log(this.requestData);
-    // sort data based on title
-    if (this.requestData != null && this.sort) {
-      this.requestData = this.requestData.sort((a, b) => {
+    console.log(this.profileData);
+    console.log(this.pageData);
+    console.log(this.jobData);
+    // sort page data based on title
+    // TODO: choose sort key
+    if (this.profileData != null && this.sort) {
+      this.profileData = this.profileData.sort((a, b) => {
+        if(a['title'] < b['title']) return -1;
+        if(a['title'] > b['title']) return 1;
+        return 0;
+      });
+    }
+    else if (this.pageData != null && this.sort) {
+      this.pageData = this.pageData.sort((a, b) => {
+        if(a['title'] < b['title']) return -1;
+        if(a['title'] > b['title']) return 1;
+        return 0;
+      });
+    }
+    // TODO: choose sort key
+    else if (this.pageData != null && this.sort) {
+      this.pageData = this.pageData.sort((a, b) => {
         if(a['title'] < b['title']) return -1;
         if(a['title'] > b['title']) return 1;
         return 0;

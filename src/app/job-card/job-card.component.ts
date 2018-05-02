@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-job-card',
+  selector: 'job-card',
   templateUrl: './job-card.component.html',
   styleUrls: ['./job-card.component.css']
 })

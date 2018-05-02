@@ -2,17 +2,19 @@
   <!-- header -->
   <div class="w-100 bg-success mb-5 p-4">
     <h1 class="text-center text-light text-uppercase m-0" style="line-height:6.3rem;">Search</h1>
+    <div class="mb-3">
+      <app-super-duper [model]="parameterSearch"></app-super-duper>
+    </div>
   </div>
   <!-- content -->
   <div class="container">
-    <app-super-duper [model]="parameterSearch"></app-super-duper>
     <div *ngIf="resultsReady">
       <h1 class="text-center">Users</h1>
-      <scroll-cards [requestData]="pageData" showMeta="1"></scroll-cards>
+      <scroll-cards [profileData]="profileData"></scroll-cards>
       <h1 class="text-center">Pages</h1>
-      <scroll-cards [requestData]="pageData" showMeta="1"></scroll-cards>
+      <scroll-cards [pageData]="pageData" showMeta="1"></scroll-cards>
       <h1 class="text-center">Jobs</h1>
-      <scroll-cards [requestData]="pageData" showMeta="1"></scroll-cards>
+      <scroll-cards [pageData]="jobData"></scroll-cards>
     </div>
   </div>
 </div>
