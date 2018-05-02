@@ -4,7 +4,7 @@ import { CalendarService } from '../services/calendar.service';
 import { UpcomingModel } from './upcoming.model';
 
 @Component({
-  selector: 'app-upcoming',
+  selector: 'upcoming',
   templateUrl: './upcoming.component.html',
   styleUrls: ['./upcoming.component.css']
 })

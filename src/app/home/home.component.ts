@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
