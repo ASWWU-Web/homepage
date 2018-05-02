@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from '../services/request.service';
+import { resolveMaskImage } from '../resolveMaskImage';
 
 import { environment } from '../../environments/environment';
 import { MEDIA_URI, MEDIA_XS, MEDIA_SM } from '../config'
@@ -17,8 +18,7 @@ export class ProfileCardComponent {
   navigate() {
     return;
   }
-
-  getPhoto(photo_URI:string, media_link:string = MEDIA_SM) {
-    return (media_link + '/' + photo_URI);
+  getMaskImage() {
+    return resolveMaskImage(this.profile.photo, MEDIA_SM);
   }
 }

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from '../services/request.service';
 import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
-import { resolveCoverImage } from '../resolveCoverImage'
+import { resolveCoverImage } from '../resolveCoverImage';
 
 @Component({
   selector: 'page-card',

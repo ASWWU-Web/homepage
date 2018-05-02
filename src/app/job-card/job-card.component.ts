@@ -11,4 +11,9 @@ export class JobCardComponent {
   navigate() {
     return;
   }
+
+  getJobDescription() {
+    let description = this.job.job_description;
+    return description.substring(0, description.indexOf('\n'));;
+  }
 }
