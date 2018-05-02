@@ -10,22 +10,20 @@ export class HomeComponent implements OnInit {
 
   bgLink = 'https://aswwu.com/media/background.php';
   bgLinkChanged = 'url(' + this.bgLink + ')';
-  // bgLinkChanged = this.bgLink;
 
   constructor() { }
 
   ngOnInit() {
-    setInterval(() => {
-      this.generateNewBgLink();
-    }, 10000);
+    if ( !(window.navigator.userAgent.match(/Android/i) || window.navigator.userAgent.match(/iPhone|iPad|iPod/i)) ) {
+      setInterval(() => {
+        this.generateNewBgLink();
+      }, 10000);
+    }
   }
 
   private generateNewBgLink() {
     const d = new Date();
     const time = d.getTime();
-    this.bgLinkChanged = 'url(../../assets/blank.png)';
-    setTimeout(() => {
-      this.bgLinkChanged = 'url(' + this.bgLink + '?' + time + ')';
-    }, 2000);
+    this.bgLinkChanged = 'url(' + this.bgLink + '?' + time + ')';
   }
 }
