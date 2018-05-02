@@ -5,7 +5,7 @@ import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
 import { resolveCoverImage } from '../resolveCoverImage'
 
 @Component({
-  selector: 'app-page-card',
+  selector: 'page-card',
   templateUrl: './page-card.component.html',
   styleUrls: ['./page-card.component.css']
 })

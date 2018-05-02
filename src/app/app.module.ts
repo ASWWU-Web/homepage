@@ -18,10 +18,11 @@ import { HomeComponent } from './home/home.component';
 import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
 import { SuperDuperComponent } from './super-duper/super-duper.component';
 
-import { SearchResultsComponent } from './search-results/search-results.component';
+import { SearchComponent } from './search/search.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { PageCardComponent } from './page-card/page-card.component';
-import { JobCardComponent } from './job-card/job-card.component'
+import { JobCardComponent } from './job-card/job-card.component';
+import { ScrollCardsComponent } from './scroll-cards/scroll-cards.component'
 
 @NgModule({
   declarations: [
@@ -33,10 +34,11 @@ import { JobCardComponent } from './job-card/job-card.component'
     UserBubbleComponent,
     HomeComponent,
     SuperDuperComponent,
-    SearchResultsComponent,
+    SearchComponent,
     ProfileCardComponent,
     PageCardComponent,
-    JobCardComponent
+    JobCardComponent,
+    ScrollCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,11 +49,11 @@ import { JobCardComponent } from './job-card/job-card.component'
     RouterModule.forRoot([
       {
         'path': 'search/:query',
-        component: SearchResultsComponent
+        component: SearchComponent
       },
       {
         'path': 'search',
-        component: SearchResultsComponent
+        component: SearchComponent
       },
       {
         'path': '',

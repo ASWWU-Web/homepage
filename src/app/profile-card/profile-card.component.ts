@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 import { MEDIA_URI, MEDIA_XS, MEDIA_SM } from '../config'
 
 @Component({
-  selector: 'app-profile-card',
+  selector: 'profile-card',
   templateUrl: './profile-card.component.html',
   styleUrls: ['./profile-card.component.css']
 })
