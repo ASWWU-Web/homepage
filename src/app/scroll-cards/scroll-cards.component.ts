@@ -15,9 +15,6 @@ export class ScrollCardsComponent {
   uniqueID: string = Math.random().toString(36).substr(2, 9);
 
   ngOnChanges() {
-    console.log(this.profileData);
-    console.log(this.pageData);
-    console.log(this.jobData);
     // sort page data based on title
     // TODO: choose sort key
     if (this.profileData != null && this.sort) {
