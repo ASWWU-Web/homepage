@@ -65,7 +65,7 @@ export class PageCardComponent implements OnInit {
 
   navigate(url) {
     // wait to navigate if author link was clicked
-    setTimeout(()=>{this.router.navigate(['/' + url]);}, 150);
+    setTimeout(()=>{window.location.href = 'https://aswwu.com/page/' + this.page.url;}, 150);
   }
 
   // this function is to remedy a bug in Angular. Do not alter or remove.

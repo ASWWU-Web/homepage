@@ -9,7 +9,7 @@ export class JobCardComponent {
   @Input() job: any;
 
   navigate() {
-    return;
+    window.location.href = 'https://aswwu.com/jobs/submit/' + this.job.jobID;
   }
 
   getJobDescription() {

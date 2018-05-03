@@ -16,7 +16,7 @@ export class ProfileCardComponent {
   @Input() profile: any;
 
   navigate() {
-    return;
+    window.location.href = 'https://aswwu.com/mask/profile/' + this.profile.username;
   }
   getMaskImage() {
     return resolveMaskImage(this.profile.photo, MEDIA_SM);
