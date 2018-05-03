@@ -6,16 +6,6 @@
     -webkit-filter: drop-shadow(5px 5px 30px rgba(0,0,0,0.5)); filter: drop-shadow(5px 5px 30px rgba(0,0,0,0.5));
 }
 
-/*Global fonts */
-body{
-  font-family: 'Dosis', sans-serif;
-}
-p, a, button {
-  font-family: 'Raleway', sans-serif;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-}
 .text-white {
   color: white;
 }
