@@ -1,12 +1,10 @@
 /* TODO: this file needs to be cleaned */
 
+@import 'https://fonts.googleapis.com/css?family=Dosis:300,400|Pacifico|Raleway:400,700';
+
 .aswwu-logo {
     -webkit-filter: drop-shadow(5px 5px 30px rgba(0,0,0,0.5)); filter: drop-shadow(5px 5px 30px rgba(0,0,0,0.5));
 }
-
-/*This css file should contain any css that gets used througout this page and it's subpages. */
-
-@import 'https://fonts.googleapis.com/css?family=Dosis:300,400|Pacifico|Raleway:400,700';
 
 /*Global fonts */
 body{
