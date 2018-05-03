@@ -1,72 +1,40 @@
-/*Mask search */
-#searchInputGroup {
-    max-width: 400px;
-    width:100%;
+#mask-search-query:focus {
+  background-color: white;
+  color: grey;
 }
-
-/*Mask Quick search */
-#maskSearchQuery {
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    border-radius: 0;
-    border-width: 3px;
-    border-color: white;
-    transition: color .2s, background-color .2s;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, .3);
-    padding-top:12px;
-    padding-bottom: 12px;
-    border-right-width: 0;
+#mask-search-button {
+  border-left: 0px;
+  transform: translateX(-2px);
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-#maskSearchButton {
-    background-color: rgba(0, 0, 0, .3) !important;
+#mask-search-button:hover {
+  background-color: white;
+  color: grey;
 }
-
-#maskSearchQuery::-webkit-input-placeholder {
-    color: white;
-}
-#maskSearchQuery:focus {
-    background-color: white;
-    color:#999;
-}
-#searchInputGroup span button {
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
-#searchInputGroup >>> .dropdown-menu {
-    width: 100%;
-    border-radius: 0px;
-    margin: 0px;
-    padding: 0px;
-}
-
-.super-section-header {
-    background-color: grey !important;
-    color: white;
-    font-weight: bold;
-    padding: .15rem .5rem;
-}
-
-#searchInputGroup >>> .dropdown-item {
-    padding:0px;
-}
-
-.result {
-    padding-left: 1.5rem;
-    padding-top:.25rem;
-    padding-bottom:.25rem;
-}
-.giant-link {
+.search-area-element {
+  font-family: 'Raleway', sans-serif;
   color: white;
-  border-radius: 0;
-  border-width: 3px;
-  border-color:white;
-  transition: color .2s, border-color .2s;
+  transition: color .2s, background-color .2s;
   font-weight: bold;
+  background-color: transparent;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  max-width: 400px;
+  border: 1px solid white;
+  border-radius: 0px;
+  box-shadow: inset 0px 0px 0px 2px white;
 }
-.giant-white {
-  color: white;
-  border-color: white;
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
 }
