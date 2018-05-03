@@ -1,0 +1,291 @@
+// an example json of events
+
+{
+ "kind": "calendar#events",
+ "etag": "\"p33sah8lcvjide0g\"",
+ "summary": "Campus Life",
+ "description": "",
+ "updated": "2017-11-29T23:48:25.979Z",
+ "timeZone": "America/Los_Angeles",
+ "accessRole": "reader",
+ "defaultReminders": [],
+ "nextPageToken": "EiUKGnNjcDN1YWdxb2NwanRtOXNodGM0Z2VuOXJrGIDIuo6h3cgC",
+ "items": [
+  {
+   "kind": "calendar#event",
+   "etag": "\"2962470917136000\"",
+   "id": "auf6p94peqg0h1804cpqn8q0ao",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=YXVmNnA5NHBlcWcwaDE4MDRjcHFuOHEwYW8gM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-06T17:02:28.000Z",
+   "updated": "2016-12-08T22:17:38.568Z",
+   "summary": "WWU Student Leadership Retreat",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "date": "2015-09-20"
+   },
+   "end": {
+    "date": "2015-09-23"
+   },
+   "transparency": "transparent",
+   "iCalUID": "auf6p94peqg0h1804cpqn8q0ao@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2962087369354000\"",
+   "id": "f7iplqe08fan8d3l184rl8a5go",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=ZjdpcGxxZTA4ZmFuOGQzbDE4NHJsOGE1Z28gM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-06T17:01:24.000Z",
+   "updated": "2016-12-06T17:01:24.677Z",
+   "summary": "ASWWU Bonfire",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-09-25T21:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-09-25T22:00:00-07:00"
+   },
+   "iCalUID": "f7iplqe08fan8d3l184rl8a5go@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2962470737038000\"",
+   "id": "bc594rr7te8i4fjm4gbqk5urj8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=YmM1OTRycjd0ZThpNGZqbTRnYnFrNXVyajggM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-06T16:45:24.000Z",
+   "updated": "2016-12-08T22:16:08.519Z",
+   "summary": "Welcome Back Bash",
+   "location": "WEC Gym",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-09-27T18:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-09-27T20:00:00-07:00"
+   },
+   "iCalUID": "bc594rr7te8i4fjm4gbqk5urj8@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2962085413138000\"",
+   "id": "ad3lrivs0a5kht9tihhhojapks",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=YWQzbHJpdnMwYTVraHQ5dGloaGhvamFwa3MgM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-06T16:45:06.000Z",
+   "updated": "2016-12-06T16:45:06.569Z",
+   "summary": "CommUnity: Convocation",
+   "location": "Walla Walla University Church, 212 Southwest 4th Street, College Place, WA 99324, United States",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-09-29T11:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-09-29T11:50:00-07:00"
+   },
+   "iCalUID": "ad3lrivs0a5kht9tihhhojapks@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2962085197884000\"",
+   "id": "8sbot6t1h4tgc6p2nbl8ld788c",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=OHNib3Q2dDFoNHRnYzZwMm5ibDhsZDc4OGMgM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-06T16:43:18.000Z",
+   "updated": "2016-12-06T16:43:18.942Z",
+   "summary": "ASWWU Gathering",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-10-02T21:15:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-10-02T22:15:00-07:00"
+   },
+   "iCalUID": "8sbot6t1h4tgc6p2nbl8ld788c@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2962084915240000\"",
+   "id": "rnbuj9kiei9p8j039u2ro2v3n0",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=cm5idWo5a2llaTlwOGowMzl1MnJvMnYzbjAgM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-06T16:40:57.000Z",
+   "updated": "2016-12-06T16:40:57.620Z",
+   "summary": "Mudbowl",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-10-04T10:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-10-04T11:00:00-07:00"
+   },
+   "iCalUID": "rnbuj9kiei9p8j039u2ro2v3n0@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2961920062732000\"",
+   "id": "vqlssmmkjdpgqrea6pacou8l60",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=dnFsc3NtbWtqZHBncXJlYTZwYWNvdThsNjAgM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-05T17:47:11.000Z",
+   "updated": "2016-12-05T17:47:11.366Z",
+   "summary": "CABL Jubilee Lake Outing",
+   "description": "Canoeing, hiking, picnic, and more. A great way to spend a Sabbath afternoon. ",
+   "location": "Meet at University Bookstore",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-10-17T12:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-10-17T17:00:00-07:00"
+   },
+   "iCalUID": "vqlssmmkjdpgqrea6pacou8l60@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2961919938414000\"",
+   "id": "1th695mfqni0eptasuv7jbjdog",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=MXRoNjk1bWZxbmkwZXB0YXN1djdqYmpkb2cgM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-05T17:46:09.000Z",
+   "updated": "2016-12-05T17:46:09.207Z",
+   "summary": "CommUnity: Hispanic Heritage",
+   "location": "Walla Walla University Church, 212 Southwest 4th Street, College Place, WA 99324, United States",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-10-20T11:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-10-20T11:50:00-07:00"
+   },
+   "iCalUID": "1th695mfqni0eptasuv7jbjdog@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2961916727960000\"",
+   "id": "qvvn9immi9c6729or6ki218f28",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=cXZ2bjlpbW1pOWM2NzI5b3I2a2kyMThmMjggM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-05T17:19:23.000Z",
+   "updated": "2016-12-05T17:19:23.980Z",
+   "summary": "CABL Applefest",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-10-23T21:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-10-23T22:00:00-07:00"
+   },
+   "iCalUID": "qvvn9immi9c6729or6ki218f28@google.com",
+   "sequence": 0
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"2961916605348000\"",
+   "id": "scp3uagqocpjtm9shtc4gen9rk",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=c2NwM3VhZ3FvY3BqdG05c2h0YzRnZW45cmsgM3A5ZnBpMzg4b3FxOTRwcXZtNWEybnVzcDRAZw",
+   "created": "2016-12-05T17:18:22.000Z",
+   "updated": "2016-12-05T17:18:22.674Z",
+   "summary": "AGA Breast Cancer 5K",
+   "creator": {
+    "email": "wwucalendar@gmail.com",
+    "displayName": "WWU Calendar"
+   },
+   "organizer": {
+    "email": "3p9fpi388oqq94pqvm5a2nusp4@group.calendar.google.com",
+    "displayName": "A-Campus Life",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2015-10-25T09:00:00-07:00"
+   },
+   "end": {
+    "dateTime": "2015-10-25T10:00:00-07:00"
+   },
+   "iCalUID": "scp3uagqocpjtm9shtc4gen9rk@google.com",
+   "sequence": 0
+  }
+ ]
+}
