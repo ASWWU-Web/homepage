@@ -27,7 +27,6 @@ export class SearchComponent implements OnInit {
       this.searchService.SearchAndReturnObservableResults(this.parameterSearch).do(([mask, pages, jobs]) => {
         this.profileData = mask;
         this.jobData = jobs;
-        console.log(this.jobData);
         this.pageData = pages;
         this.resultsReady = 2;
       }).subscribe();

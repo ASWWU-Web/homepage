@@ -3,7 +3,7 @@
     max-width: 400px;
     width:100%;
 }
-  
+
 /*Mask Quick search */
 #maskSearchQuery {
     font-family: 'Raleway', sans-serif;
@@ -57,4 +57,16 @@
     padding-left: 1.5rem;
     padding-top:.25rem;
     padding-bottom:.25rem;
+}
+.giant-link {
+  color: white;
+  border-radius: 0;
+  border-width: 3px;
+  border-color:white;
+  transition: color .2s, border-color .2s;
+  font-weight: bold;
+}
+.giant-white {
+  color: white;
+  border-color: white;
 }
