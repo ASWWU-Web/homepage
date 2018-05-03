@@ -1,8 +1,4 @@
 <div id="search-input-group" class="input-group mx-auto">
-  <!-- <input #maskInput (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" id="maskSearchQuery" type="text" class="form-control" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find the one...">
-  <span class="input-group-btn">
-    <button id="maskSearchButton" class="btn btn-secondary btn-outline-secondary giant-link giant-white" type="button" (click)="maskSearch(maskInput.value)"><i class="fa fa-search"></i></button>
-  </span> -->
   <div id="search-bar" class="row">
     <ng-template #rt let-r="result" let-t="term">
       <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
