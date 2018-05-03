@@ -1,3 +1,7 @@
+#search-bar {
+  width: 400px;
+  margin: auto;
+}
 #mask-search-query:focus {
   background-color: white;
   color: grey;
@@ -24,6 +28,35 @@
   border: 1px solid white;
   border-radius: 0px;
   box-shadow: inset 0px 0px 0px 2px white;
+}
+#search-input-group span button {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#search-input-group >>> .dropdown-menu {
+    width: 400px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.super-section-header {
+    background-color: grey !important;
+    color: white;
+    font-weight: bold;
+    padding: .15rem .5rem;
+}
+
+#search-input-group >>> .dropdown-item {
+    padding:0px;
+    width: 100%;
+}
+
+.result {
+    padding-left: 1.5rem;
+    padding-top:.25rem;
+    padding-bottom:.25rem;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
