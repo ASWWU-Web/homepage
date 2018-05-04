@@ -1,19 +1,10 @@
-<div id="searchInputGroup" class="input-group mx-auto">
-  <ng-template #rt let-r="result" let-t="term">
-    <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
-    <div (click)="goToResult(r.link)" class="result">
-      {{r.main}}
-    </div>
-  </ng-template>
-
-    <input #maskInput (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" id="maskSearchQuery" type="text" class="form-control" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find anything...">
-
-
-  <!-- <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Wikipedia search" /> -->
-  <!-- <span *ngIf="searching">searching...</span> -->
-  <!-- <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div> -->
-
-  <span class="input-group-btn">
-    <button id="maskSearchButton" class="btn btn-secondary btn-outline-secondary giant-link giant-white" type="button" (click)="maskSearch(maskInput.value)">Go!</button>
-  </span>
+<div id="search-input-group" class="input-group mx-auto">
+  <div id="search-bar" class="row">
+    <ng-template #rt let-r="result" let-t="term">
+      <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
+      <div (click)="goToResult(r.link)" class="result">{{r.main}}</div>
+    </ng-template>
+    <input #maskInput id="mask-search-query" class="search-area-element col form-control"  (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" id="maskSearchQuery" type="text" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find the one...">
+    <button id="mask-search-button" class="search-area-element col-1 form-control" (click)="maskSearch(maskInput.value)"><i class="fas fa-search"></i></button>
+  </div>
 </div>

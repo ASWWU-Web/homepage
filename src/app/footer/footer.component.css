@@ -1,0 +1,83 @@
+#foot{
+    font-family: 'Dosis', sans-serif;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+p, a, button {
+    font-family: 'Raleway', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+.text-white {
+    color: white;
+}
+
+/*Footer*/
+#footer {
+    padding-top: 50px;
+    background-color: #4e5255;
+    padding-bottom: 34px;
+}
+#footerLogo {
+    max-width: 200px!important;
+}
+.footerLink {
+    color:#a7abae;
+    transition: color .2s;
+}
+.footerLink:hover, .footerLink:active, .footerLink:focus{
+    color:white!important;
+    text-decoration: none;
+}
+
+
+/*Social*/
+#social {
+    list-style: none;
+    list-style-type: none;
+    padding-left: 0;
+  }
+#social li {
+    display: inline-block;
+    padding-right: 10px;
+}
+#social li a svg {
+    height: 30px;
+    width: 30px;
+    fill:#a7abae;
+    transition: fill .2s;
+    overflow: hidden;
+}
+#social li a svg:hover {
+    fill:white;
+}
+#brand {
+    color:#cdcfd0;
+}
+
+/*Random utilities*/
+.logo {
+    max-width: 400px;
+    width:100%!important;
+    height: auto;
+    margin-bottom: .8em;
+}
+#aswwuLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://aswwu.com/media/background.php);
+    background-size:cover;
+    height:95vh;
+    width: 100%;
+}
+#aswwuLogo img{
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    padding: 0 20px 0 20px;
+}
+.navbar>.container {
+    align-items: stretch !important;
+}

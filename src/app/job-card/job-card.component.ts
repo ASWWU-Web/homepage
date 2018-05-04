@@ -9,6 +9,11 @@ export class JobCardComponent {
   @Input() job: any;
 
   navigate() {
-    return;
+    window.location.href = 'https://aswwu.com/jobs/submit/' + this.job.jobID;
+  }
+
+  getJobDescription() {
+    let description = this.job.job_description;
+    return description.substring(0, description.indexOf('\n'));;
   }
 }

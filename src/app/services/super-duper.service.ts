@@ -32,7 +32,7 @@ export class SuperDuperService {
     query = query.toLowerCase();
     const visible = item.visibility;
     const inDescription = false;//item.job_description.search(query) !== -1;
-    const inName = item.job_name.search(query) !== -1;
+    const inName = item.job_name.toLowerCase().search(query) !== -1;
     const show = visible && (inDescription || inName);
     return show;
   }
@@ -82,7 +82,7 @@ export class SuperDuperService {
   SearchAndReturnObservableArray(query) {
     const queryUri = this.parseQuery(query);
     let maskObservable = this.requests.getObservable( this.maskUri + queryUri ).map(response => this.mapMask(response)).catch(err => of([]));
-    let pagesObservable = this.requests.getObservable( this.pagesUri ).map(response => this.mapPages(response)).catch(err => of([]));
+    let pagesObservable = this.requests.getObservable( this.pagesUri + queryUri ).map(response => this.mapPages(response)).catch(err => of([]));
     let jobsObservable = this.requests.getObservable( this.jobsUri ).map(response => this.mapJobs(query, response)).catch(err => of([])); // don't parseQuery()
     // uses: https://stackoverflow.com/questions/44141569/how-to-concat-two-observable-arrays-into-a-single-array
     let toReturn = Observable.forkJoin(maskObservable, pagesObservable, jobsObservable).map(([s1, s2, s3]) => {
@@ -94,8 +94,10 @@ export class SuperDuperService {
   SearchAndReturnObservableResults(query) {
     const queryUri = this.parseQuery(query);
     let maskObservable = this.requests.getObservable( this.maskUri + queryUri ).map(response => response.results).catch(err => of([]));
-    let pagesObservable = this.requests.getObservable( this.pagesUri ).map(response => response.results).catch(err => of([]));
-    let jobsObservable = this.requests.getObservable( this.jobsUri ).map(response => response.results.filter(result => this.filterJobs(query, result))).catch(err => of([])); // don't parseQuery()
+    let pagesObservable = this.requests.getObservable( this.pagesUri + queryUri ).map(response => response.results).catch(err => of([]));
+    let jobsObservable = this.requests.getObservable( this.jobsUri ).map(response => response.forms.filter(result => this.filterJobs(query, result))).catch(err => of([])); // don't parseQuery()
+    // let jobsObservable = this.requests.getObservable( this.jobsUri ).map(response => this.mapJobs(query, response)).catch(err => of([])); // don't parseQuery()
+
     // uses: https://stackoverflow.com/questions/44141569/how-to-concat-two-observable-arrays-into-a-single-array
     let toReturn = Observable.forkJoin(maskObservable, pagesObservable, jobsObservable);
     return toReturn;

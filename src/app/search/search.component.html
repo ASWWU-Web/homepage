@@ -9,21 +9,24 @@
   <!-- content -->
   <div class="container">
     <div *ngIf="resultsReady == 1">
-      <p>
-        Loading...
-      </p>
+      <p class="text-center mb-5">Searching...</p>
     </div>
     <div *ngIf="resultsReady == 2">
+      <!-- profiles -->
       <div *ngIf="profileData.length > 0">
-        <h1 class="text-center">Users</h1>
+        <h2 class="text-uppercase text-center mb-3">Profiles</h2>
         <scroll-cards [profileData]="profileData"></scroll-cards>
+        <hr />
       </div>
+      <!-- pages -->
       <div *ngIf="pageData.length > 0">
-        <h1 class="text-center">Pages</h1>
+        <h2 class="text-uppercase text-center mb-3">Pages</h2>
         <scroll-cards [pageData]="pageData" showMeta="1"></scroll-cards>
+        <hr />
       </div>
+      <!-- jobs -->
       <div *ngIf="jobData.length > 0">
-        <h1 class="text-center">Jobs</h1>
+        <h2 class="text-uppercase text-center mb-3">Jobs</h2>
         <scroll-cards [jobData]="jobData"></scroll-cards>
       </div>
     </div>

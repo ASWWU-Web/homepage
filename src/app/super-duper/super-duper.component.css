@@ -1,42 +1,41 @@
-/*Mask search */
-#searchInputGroup {
-    max-width: 400px;
-    width:100%;
+#search-bar {
+  width: 400px;
+  margin: auto;
 }
-  
-/*Mask Quick search */
-#maskSearchQuery {
-    font-family: 'Raleway', sans-serif;
-    color: white;
-    border-radius: 0;
-    border-width: 3px;
-    border-color: white;
-    transition: color .2s, background-color .2s;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, .3);
-    padding-top:12px;
-    padding-bottom: 12px;
-    border-right-width: 0;
+#mask-search-query:focus {
+  background-color: white;
+  color: grey;
 }
-
-#maskSearchButton {
-    background-color: rgba(0, 0, 0, .3) !important;
+#mask-search-button {
+  border-left: 0px;
+  transform: translateX(-2px);
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-#maskSearchQuery::-webkit-input-placeholder {
-    color: white;
+#mask-search-button:hover {
+  background-color: white;
+  color: grey;
 }
-#maskSearchQuery:focus {
-    background-color: white;
-    color:#999;
+.search-area-element {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  transition: color .2s, background-color .2s;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, .3);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  max-width: 400px;
+  border: 1px solid white;
+  border-radius: 0px;
+  box-shadow: inset 0px 0px 0px 2px white;
 }
-#searchInputGroup span button {
+#search-input-group span button {
     padding-top: 12px;
     padding-bottom: 12px;
 }
 
-#searchInputGroup >>> .dropdown-menu {
-    width: 100%;
+#search-input-group >>> .dropdown-menu {
+    width: 400px;
     border-radius: 0px;
     margin: 0px;
     padding: 0px;
@@ -49,12 +48,26 @@
     padding: .15rem .5rem;
 }
 
-#searchInputGroup >>> .dropdown-item {
+#search-input-group >>> .dropdown-item {
     padding:0px;
+    width: 100%;
 }
 
 .result {
     padding-left: 1.5rem;
     padding-top:.25rem;
     padding-bottom:.25rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
 }

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from '../services/request.service';
 import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
-import { resolveCoverImage } from '../resolveCoverImage'
+import { resolveCoverImage } from '../resolveCoverImage';
 
 @Component({
   selector: 'page-card',
@@ -65,7 +65,7 @@ export class PageCardComponent implements OnInit {
 
   navigate(url) {
     // wait to navigate if author link was clicked
-    setTimeout(()=>{this.router.navigate(['/' + url]);}, 150);
+    setTimeout(()=>{window.location.href = 'https://aswwu.com/page/' + this.page.url;}, 150);
   }
 
   // this function is to remedy a bug in Angular. Do not alter or remove.
