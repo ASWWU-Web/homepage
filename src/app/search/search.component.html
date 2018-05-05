@@ -7,11 +7,13 @@
     </div>
   </div>
   <!-- content -->
-  <div class="container">
+  <div id="results" class="container">
     <div *ngIf="resultsReady == 1">
       <p class="text-center mb-5">Searching...</p>
     </div>
     <div *ngIf="resultsReady == 2">
+      <!-- no results -->
+      <p *ngIf="profileData.length == 0 && pageData.length == 0 && jobData.length == 0" class="text-center mb-5">No results found.</p>
       <!-- profiles -->
       <div *ngIf="profileData.length > 0">
         <h2 class="text-uppercase text-center mb-3">Profiles</h2>
