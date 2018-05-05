@@ -9,9 +9,10 @@
     width:60px;
     border-radius: 0px;
     border-style:none;
-    position: absolute;
+    position: fixed;
     left:0px;
     top:0px;
+    z-index: 2;
   }
 
   .mobile-hamburger:active {

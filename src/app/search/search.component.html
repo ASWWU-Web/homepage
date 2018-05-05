@@ -1,0 +1,36 @@
+<div class="page-container">
+  <!-- header -->
+  <div class="w-100 bg-success mb-5 p-4">
+    <h1 class="text-center text-light text-uppercase m-0" style="line-height:6.3rem;">Search</h1>
+    <div class="mb-3">
+      <super-duper [model]="parameterSearch"></super-duper>
+    </div>
+  </div>
+  <!-- content -->
+  <div id="results" class="container">
+    <div *ngIf="resultsReady == 1">
+      <p class="text-center mb-5">Searching...</p>
+    </div>
+    <div *ngIf="resultsReady == 2">
+      <!-- no results -->
+      <p *ngIf="profileData.length == 0 && pageData.length == 0 && jobData.length == 0" class="text-center mb-5">No results found.</p>
+      <!-- profiles -->
+      <div *ngIf="profileData.length > 0">
+        <h2 class="text-uppercase text-center mb-3">Profiles</h2>
+        <scroll-cards [profileData]="profileData"></scroll-cards>
+        <hr />
+      </div>
+      <!-- pages -->
+      <div *ngIf="pageData.length > 0">
+        <h2 class="text-uppercase text-center mb-3">Pages</h2>
+        <scroll-cards [pageData]="pageData" showMeta="1"></scroll-cards>
+        <hr />
+      </div>
+      <!-- jobs -->
+      <div *ngIf="jobData.length > 0">
+        <h2 class="text-uppercase text-center mb-3">Jobs</h2>
+        <scroll-cards [jobData]="jobData"></scroll-cards>
+      </div>
+    </div>
+  </div>
+</div>
