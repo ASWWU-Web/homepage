@@ -1,0 +1,35 @@
+.scrolling-wrapper {
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0px;
+}
+
+.scroll-card {
+  flex: 0 0 auto;
+  /* flex-direction: column; */
+}
+.scroll-button {
+  border: 0;
+  background-color: transparent;
+  height:50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #6c757d;
+  transition: .15s;
+}
+.scroll-button:hover {
+  cursor: pointer;
+  color: #5A6267;
+  transition: .15s;
+}
+.scroll-button:focus {
+  outline: 0;
+}

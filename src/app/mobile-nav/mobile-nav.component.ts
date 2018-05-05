@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mobile-nav',
+  selector: 'mobile-nav',
   templateUrl: './mobile-nav.component.html',
   styleUrls: ['./mobile-nav.component.css']
 })

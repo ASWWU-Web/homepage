@@ -3,7 +3,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserBubbleComponent } from '../user-bubble/user-bubble.component';
 
 @Component({
-	selector: 'app-nav-bar',
+	selector: 'nav-bar',
 	templateUrl: 'nav-bar.component.html',
 	styleUrls: [ 'nav-bar.styles.css']
 })
