@@ -15,7 +15,7 @@ import 'rxjs/add/operator/merge';
 import { SuperDuperService } from '../services/services';
 
 @Component({
-  selector: 'app-super-duper',
+  selector: 'super-duper',
   templateUrl: './super-duper.component.html',
   styleUrls: ['./super-duper.component.css']
 })
