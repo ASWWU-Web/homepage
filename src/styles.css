@@ -1,9 +1,19 @@
-body{
-  font-family: 'Dosis', sans-serif;
+@import 'https://fonts.googleapis.com/css?family=Dosis:300,400|Pacifico|Raleway:400,700';
+
+:root {
+    --font-1: 'Dosis', sans-serif; /* Headers and big text */
+    --font-2: 'Raleway', sans-serif; /* Generic Text */
+    --font-test: "Brush Script MT", cursive; /* an eye-sore font to make sure it's working */
 }
-p, a, button {
-  font-family: 'Raleway', sans-serif;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-1);
 }
+
+* {
+    font-family: var(--font-2);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
@@ -28,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   border-right: none;
 }
 #nav-links li a {
-  font-family: 'Dosis', sans-serif;
+  font-family: var(--font-1);
   color: white;
   transition: color .2s, background-color .2s;
 }
