@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/do';
 
-import { SuperDuperService } from '../services/services';
+import { SuperDuperService } from '../services/super-duper.service';
 
 @Component({
   selector: 'search',
