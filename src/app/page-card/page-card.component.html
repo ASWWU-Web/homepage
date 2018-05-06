@@ -9,8 +9,8 @@
       <p class="card-text">{{page['description']}}</p>
     </div>
     <!-- metadata -->
-    <hr *ngIf="showMeta == 1"/>
-    <div *ngIf="showMeta == 1" class="card-block row">
+    <hr *ngIf="showMeta"/>
+    <div *ngIf="showMeta" class="card-block row">
       <!-- name and date -->
       <div class="col">
         <p class="text-center mb-1"><a class="text-muted" href="{{authorProfile()}}">{{getAuthor()}}</a></p>
