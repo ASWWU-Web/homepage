@@ -1,3 +1,7 @@
 #results {
   min-height: 298px;
 }
+#search-header {
+    background-image: url("https://aswwu.com/media/images/collegian/search.jpg");
+    background-size: 100%;
+}
