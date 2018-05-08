@@ -1,3 +1,7 @@
 #results {
   min-height: 298px;
 }
+#search-header {
+    background-image: url(../../assets/search.jpg);
+    background-size: 100%;
+}
