@@ -1,5 +1,6 @@
 .scrolling-wrapper {
   -webkit-overflow-scrolling: touch;
+  overflow-scrolling: auto;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
