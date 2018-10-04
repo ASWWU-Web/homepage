@@ -88,7 +88,7 @@ export class SenateElectionComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.writeInModel);
+    console.log(this.buildJsonResponse());
   }
 
   valueChange($event, username){
@@ -117,6 +117,33 @@ export class SenateElectionComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  buildJsonResponse() {
+    let response = {
+      vote_1: null,
+      vote_2: null,
+      write_in_1: null,
+      write_in_2: null
+    };
+    for (let candidate in this.candidateModel) {
+      if (this.candidateModel[candidate] == true) {
+        if (!response.vote_1) {
+          response.vote_1 = candidate;
+        } else if (!response.vote_2) {
+          response.vote_2 = candidate;
+        } else {
+          // something went wrong...
+        }
+      }
+    }
+    if (this.writeInModel.writeIn1.length > 0) {
+      response.write_in_1 = this.writeInModel.writeIn1;
+    }
+    if (this.writeInModel.writeIn2.length > 0) {
+      response.write_in_2 = this.writeInModel.writeIn2;
+    }
+    return response;
   }
 
 }
