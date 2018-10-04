@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestService } from '../services/request.service';
+
+import * from './candidates.json';
 
 @Component({
   selector: 'app-senate-election',
@@ -22,9 +25,51 @@ export class SenateElectionComponent implements OnInit {
   //    set empty write-in inputs to inactive (grayed out) state when number of selected pictures + input boxes fillled >=2
   //
 
-  constructor() { }
+
+
+  showDistricts: boolean = true;
+  districts: string[] = ['1','2', '3', '4','5','6','7'];
+
+  candidatesJSON = {
+    "candidates": [
+        {
+            "username":"Sheldon.Woodward",
+            "name": "Sheldon Woodward",
+            "photo": "some_url"
+        },
+        {
+            "username":"Sheldon.Woodward2",
+            "name": "Sheldon Woodward2",
+            "photo": "some_url2"
+        },
+        {
+            "username":"Sheldon.Woodward3",
+            "name": "Sheldon Woodward3",
+            "photo": "some_url3"
+        }
+    ]
+  };
+
+  selectedDistrict: string = "";
+
+  candidates: any[] = [];
+
+  constructor(private rs: RequestService) { }
 
   ngOnInit() {
+    console.log(this.candidatesJSON.candidates[0].username);
+  }
+
+  getCandidates() {
+    // console.log(this.selectedDistrict);
+    // this.rs.get(('senate-election/candidates/' + this.selectedDistrict), (data) => {
+    //   data = this.candidatesJSON;
+    //   console.log(data);
+    // }, (data) => {})
+    
+    this.candidates = this.candidatesJSON.candidates;
+
+    this.showDistricts = false;
   }
 
 }
