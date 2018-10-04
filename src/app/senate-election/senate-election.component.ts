@@ -64,7 +64,6 @@ export class SenateElectionComponent implements OnInit {
   };
 
   ngOnInit() {
-    console.log(this.candidatesJSON.candidates[0].username);
     this.getCandidates();
   }
 
@@ -89,6 +88,8 @@ export class SenateElectionComponent implements OnInit {
 
   submit() {
     console.log(this.buildJsonResponse());
+    let postURI = 'senate-election';
+    this.rs.post(postURI, this.buildJsonResponse(), (data)=>{}, (data)=>{});
   }
 
   valueChange($event, username){
