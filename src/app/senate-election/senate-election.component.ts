@@ -7,7 +7,7 @@ import { RequestService } from '../services/request.service';
   styleUrls: ['./senate-election.component.css']
 })
 export class SenateElectionComponent implements OnInit {
-
+  
   // TODO:
   //    on initialization get list of candidates (alternatively wait until "Go" and have server only return candidates for one district)
   //    Show the first page with district
@@ -24,47 +24,44 @@ export class SenateElectionComponent implements OnInit {
   //
   //    add a clear button to candidate selection page
   //
-
-
-
-  showDistricts: boolean = false;
-  districts: string[] = ['1','2', '3', '4','5','6','7'];
-
+  
+  constructor(private rs: RequestService) { }
+  
+  
+  showDistricts: boolean = true;
+  showCandidates: boolean = false;
+  showSubmissionStatus: boolean = false;
+  
   candidatesJSON = {
     "candidates": [
-        {
-            "username":"Sheldon.Woodward",
-            "name": "Sheldon Woodward",
-            "photo": ""
-        },
-        {
-            "username":"Sheldon.Woodward2",
-            "name": "Sheldon Woodward2",
-            "photo": ""
-        },
-        {
-            "username":"Sheldon.Woodward3",
-            "name": "Sheldon Woodward3",
-            "photo": ""
-        }
+      {
+        "username":"Sheldon.Woodward",
+        "name": "Sheldon Woodward",
+        "photo": ""
+      },
+      {
+        "username":"Sheldon.Woodward2",
+        "name": "Sheldon Woodward2",
+        "photo": ""
+      },
+      {
+        "username":"Sheldon.Woodward3",
+        "name": "Sheldon Woodward3",
+        "photo": ""
+      }
     ]
   };
-
+  
+  districts: string[] = ['1','2', '3', '4','5','6','7'];
   selectedDistrict: string = "";
-
   candidates: any[] = [];
-
-  constructor(private rs: RequestService) { }
-
   candidateModel = {};
-
   writeInModel = {
     writeIn1: "",
     writeIn2: ""
   };
 
   ngOnInit() {
-    this.getCandidates();
   }
 
   buildCandidateModel() {
@@ -84,12 +81,18 @@ export class SenateElectionComponent implements OnInit {
     this.buildCandidateModel();
 
     this.showDistricts = false;
+    this.showCandidates = true;
+    this.showSubmissionStatus = false;
   }
 
   submit() {
     console.log(this.buildJsonResponse());
     let postURI = 'senate-election';
     this.rs.post(postURI, this.buildJsonResponse(), (data)=>{}, (data)=>{});
+    
+    this.showDistricts = false;
+    this.showCandidates = false;
+    this.showSubmissionStatus = true;
   }
 
   valueChange($event, username){

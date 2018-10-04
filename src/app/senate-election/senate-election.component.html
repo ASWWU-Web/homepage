@@ -16,7 +16,7 @@
 
 <!-- SELECT CANDIDATE PAGE -->
 
-<div *ngIf='!showDistricts'>
+<div *ngIf='showCandidates'>
 
   <div class="btn-group btn-group-toggle;">
       <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary">
@@ -33,4 +33,9 @@
 
   <button (click)='submit();'>Vote!</button>
 
+</div>
+
+
+<div *ngIf='showSubmissionStatus'>
+  submission status
 </div>
