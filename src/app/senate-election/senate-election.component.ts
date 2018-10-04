@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../services/request.service';
 
-import * from './candidates.json';
-
 @Component({
   selector: 'app-senate-election',
   templateUrl: './senate-election.component.html',
