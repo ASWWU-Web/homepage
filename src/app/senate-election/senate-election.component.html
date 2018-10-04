@@ -18,22 +18,13 @@
 
 <div *ngIf='!showDistricts'>
 
-  <ul>
-    <li *ngFor="let candidate of candidates;">
-      {{candidate.name}}
-      <img src="{{candidate.image}}">
-    </li>
-  </ul>
-
-
-  <div class="btn-group btn-group-toggle;" ngbRadioGroup name="candidate_input" [(ngModel)]="selectedDistrict">
+  <div class="btn-group btn-group-toggle;">
       <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary">
-        <input ngbButton type="radio" value="{{candidate}}"> {{candidate.name}}
-        <img src="{{candidate.image}}">
+        <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username)'> {{candidate.name}}
+        <img src="{{candidate.photo}}">
       </label>
     </div>
     <hr>
-  <pre>{{selectedCandidate}}</pre>
 
   <button (click)='submit();'>Vote!</button>
 

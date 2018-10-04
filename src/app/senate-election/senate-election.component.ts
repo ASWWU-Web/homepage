@@ -22,10 +22,12 @@ export class SenateElectionComponent implements OnInit {
   //    use ngstyle to set unselected pictures to faded state when number of selected pictures + input boxes fillled >= 2
   //    set empty write-in inputs to inactive (grayed out) state when number of selected pictures + input boxes fillled >=2
   //
+  //    add a clear button to candidate selection page
+  //
 
 
 
-  showDistricts: boolean = true;
+  showDistricts: boolean = false;
   districts: string[] = ['1','2', '3', '4','5','6','7'];
 
   candidatesJSON = {
@@ -33,17 +35,17 @@ export class SenateElectionComponent implements OnInit {
         {
             "username":"Sheldon.Woodward",
             "name": "Sheldon Woodward",
-            "photo": "some_url"
+            "photo": ""
         },
         {
             "username":"Sheldon.Woodward2",
             "name": "Sheldon Woodward2",
-            "photo": "some_url2"
+            "photo": ""
         },
         {
             "username":"Sheldon.Woodward3",
             "name": "Sheldon Woodward3",
-            "photo": "some_url3"
+            "photo": ""
         }
     ]
   };
@@ -54,8 +56,17 @@ export class SenateElectionComponent implements OnInit {
 
   constructor(private rs: RequestService) { }
 
+  candidateModel = {};
+
   ngOnInit() {
     console.log(this.candidatesJSON.candidates[0].username);
+    this.getCandidates();
+  }
+
+  buildCandidateModel() {
+    for (let candidate of this.candidates) {
+      this.candidateModel[candidate.username] = false;
+    }
   }
 
   getCandidates() {
@@ -66,8 +77,32 @@ export class SenateElectionComponent implements OnInit {
     // }, (data) => {})
     
     this.candidates = this.candidatesJSON.candidates;
+    this.buildCandidateModel();
 
     this.showDistricts = false;
+  }
+
+  submit() {
+    console.log(this.candidateModel);
+  }
+
+  valueChange($event, username){
+    this.candidateModel[username] = $event;
+    console.log(this.candidateModel);
+  }
+
+  enableVoting(candidateUsername) {
+    let numSelected = 0;
+    for (let candidate in this.candidateModel) {
+      if (this.candidateModel[candidate] == true) {
+        numSelected = numSelected + 1;
+      }
+    }
+    if (numSelected >= 2) {
+      return this.candidateModel[candidateUsername];
+    } else {
+      return true;
+    }
   }
 
 }
