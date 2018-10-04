@@ -58,6 +58,11 @@ export class SenateElectionComponent implements OnInit {
 
   candidateModel = {};
 
+  writeInModel = {
+    writeIn1: "",
+    writeIn2: ""
+  };
+
   ngOnInit() {
     console.log(this.candidatesJSON.candidates[0].username);
     this.getCandidates();
@@ -83,23 +88,32 @@ export class SenateElectionComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.candidateModel);
+    console.log(this.writeInModel);
   }
 
   valueChange($event, username){
     this.candidateModel[username] = $event;
-    console.log(this.candidateModel);
   }
 
-  enableVoting(candidateUsername) {
+  enableVoting(name, isCandidate) {
     let numSelected = 0;
     for (let candidate in this.candidateModel) {
       if (this.candidateModel[candidate] == true) {
         numSelected = numSelected + 1;
       }
     }
+    if (this.writeInModel.writeIn1.length > 0) {
+      numSelected = numSelected + 1;
+    }
+    if (this.writeInModel.writeIn2.length > 0) {
+      numSelected = numSelected + 1;
+    }
     if (numSelected >= 2) {
-      return this.candidateModel[candidateUsername];
+      if (isCandidate) {
+        return this.candidateModel[name];
+      } else {
+        return (name.length > 0);
+      }
     } else {
       return true;
     }
