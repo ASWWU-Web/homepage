@@ -16,24 +16,25 @@
         </li>
       </ul>
     </div>
-    <hr>
   <div *ngIf='pageNumber == 0'>
+    <div class="card-body">
 
     <div *ngFor="let district of districts;" class="btn-group-vertical btn-group-toggle col p-1" ngbRadioGroup name="district_input" [(ngModel)]="selectedDistrict">  
       <label ngbButtonLabel class="btn-primary">
           <input ngbButton type="radio" value="{{district}}"> {{district}}
         </label>
       </div>
-      <hr>
-    <pre>{{selectedDistrict}}</pre>
 
+    </div>
+    <div class="card-footer">
       <button type="button" (click)='getCandidates();' class="btn btn-primary mx-auto w-25 d-block">Go!</button>
-
+    </div>
   </div>
 
   <!-- SELECT CANDIDATE PAGE -->
 
   <div *ngIf='pageNumber == 1'>
+      <div class="card-body">
 
     <div class="btn-group btn-group-toggle;">
         <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary">
@@ -48,13 +49,18 @@
 
       <hr>
 
-    <button (click)='submit();'>Vote!</button>
-
+      </div>
+      <div class="card-footer">
+          <button type="button" (click)='submit();' class="btn btn-primary mx-auto w-25 d-block">Vote!</button>
+  </div>
   </div>
 
+  <!-- SUBMISSION PAGE -->
 
-  <div *ngIf='pageNumber == 2'>
+  <div *ngIf='pageNumber == 2' class="card-body">
+      <div class="card-body">
     submission status
+    </div>
   </div>
 </div>
 </div>
