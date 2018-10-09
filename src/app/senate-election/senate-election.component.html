@@ -1,41 +1,60 @@
 <!-- SELECT DISTRICT PAGE -->
 
-<div *ngIf='showDistricts'>
-
-  <div class="btn-group btn-group-toggle;" ngbRadioGroup name="district_input" [(ngModel)]="selectedDistrict">
-      <label *ngFor="let district of districts;" ngbButtonLabel class="btn-primary">
-        <input ngbButton type="radio" value="{{district}}"> {{district}}
-      </label>
+<div class="container">
+    Senate Election  
+  <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': pageNumber==0, 'disabled': pageNumber!=0}">Districts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': pageNumber==1, 'disabled': pageNumber!=1}">Senators</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': pageNumber==2, 'disabled': pageNumber!=2}">Submission Status</a>
+          </li>
+      </ul>
     </div>
     <hr>
-  <pre>{{selectedDistrict}}</pre>
+  <div *ngIf='pageNumber == 0'>
 
-  <button (click)='getCandidates();'>Go!</button>
-  
+    <div *ngFor="let district of districts;" class="btn-group-vertical btn-group-toggle col p-1" ngbRadioGroup name="district_input" [(ngModel)]="selectedDistrict">  
+      <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="{{district}}"> {{district}}
+        </label>
+      </div>
+      <hr>
+    <pre>{{selectedDistrict}}</pre>
+
+      <button type="button" (click)='getCandidates();' class="btn btn-primary mx-auto w-25 d-block">Go!</button>
+
+  </div>
+
+  <!-- SELECT CANDIDATE PAGE -->
+
+  <div *ngIf='pageNumber == 1'>
+
+    <div class="btn-group btn-group-toggle;">
+        <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary">
+          <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> {{candidate.name}}
+          <img src="{{candidate.photo}}">
+        </label>
+      </div>
+      <hr>
+
+      <input type="text" class="form-control" [(ngModel)]="writeInModel.writeIn1" [disabled]='!enableVoting(writeInModel.writeIn1, false)'/>
+      <input type="text" class="form-control" [(ngModel)]="writeInModel.writeIn2" [disabled]='!enableVoting(writeInModel.writeIn2, false)'/>
+
+      <hr>
+
+    <button (click)='submit();'>Vote!</button>
+
+  </div>
+
+
+  <div *ngIf='pageNumber == 2'>
+    submission status
+  </div>
 </div>
-
-<!-- SELECT CANDIDATE PAGE -->
-
-<div *ngIf='showCandidates'>
-
-  <div class="btn-group btn-group-toggle;">
-      <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary">
-        <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> {{candidate.name}}
-        <img src="{{candidate.photo}}">
-      </label>
-    </div>
-    <hr>
-
-    <input type="text" class="form-control" [(ngModel)]="writeInModel.writeIn1" [disabled]='!enableVoting(writeInModel.writeIn1, false)'/>
-    <input type="text" class="form-control" [(ngModel)]="writeInModel.writeIn2" [disabled]='!enableVoting(writeInModel.writeIn2, false)'/>
-
-    <hr>
-
-  <button (click)='submit();'>Vote!</button>
-
-</div>
-
-
-<div *ngIf='showSubmissionStatus'>
-  submission status
 </div>

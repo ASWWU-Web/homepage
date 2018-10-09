@@ -28,9 +28,12 @@ export class SenateElectionComponent implements OnInit {
   constructor(private rs: RequestService) { }
   
   
-  showDistricts: boolean = true;
-  showCandidates: boolean = false;
-  showSubmissionStatus: boolean = false;
+  // showDistricts: boolean = true;
+  // showCandidates: boolean = false;
+  // showSubmissionStatus: boolean = false;
+
+  // Page 0 is districts page
+  pageNumber: number = 0;
   
   candidatesJSON = {
     "candidates": [
@@ -80,9 +83,11 @@ export class SenateElectionComponent implements OnInit {
     this.candidates = this.candidatesJSON.candidates;
     this.buildCandidateModel();
 
-    this.showDistricts = false;
-    this.showCandidates = true;
-    this.showSubmissionStatus = false;
+    // Page 1 is the candidates page
+    this.pageNumber = 1;
+    // this.showDistricts = false;
+    // this.showCandidates = true;
+    // this.showSubmissionStatus = false;
   }
 
   submit() {
@@ -90,9 +95,11 @@ export class SenateElectionComponent implements OnInit {
     let postURI = 'senate-election';
     this.rs.post(postURI, this.buildJsonResponse(), (data)=>{}, (data)=>{});
     
-    this.showDistricts = false;
-    this.showCandidates = false;
-    this.showSubmissionStatus = true;
+    // Page 2 is the submission page
+    this.pageNumber = 2;
+    // this.showDistricts = false;
+    // this.showCandidates = false;
+    // this.showSubmissionStatus = true;
   }
 
   valueChange($event, username){
