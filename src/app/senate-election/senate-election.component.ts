@@ -68,7 +68,7 @@ export class SenateElectionComponent implements OnInit {
     "Staff"
   ];
 
-  selectedDistrict: string = "1";
+  selectedDistrict: string = "";
   candidates: any[] = [];
   candidateModel = {};
   writeInModel = {
@@ -85,9 +85,25 @@ export class SenateElectionComponent implements OnInit {
     }
   }
 
+  
+
   getCandidates() {
+    if (this.selectedDistrict == '') {
+      return;
+    }
+    
+    let districtNum = 0;
+    let i = 0;
+    for (let district of this.districts) {
+      i = i + 1;
+      if (district == this.selectedDistrict) {
+        districtNum = i;
+        break;
+      }
+    }
+    
     // console.log(this.selectedDistrict);
-    // this.rs.get(('senate-election/candidates/' + this.selectedDistrict), (data) => {
+    // this.rs.get(('senate-election/candidates/' + districtNum), (data) => {
     //   data = this.candidatesJSON;
     //   console.log(data);
     // }, (data) => {})

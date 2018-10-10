@@ -22,12 +22,12 @@
     <div *ngFor="let district of districts; let i = index" class="btn-group-vertical btn-group-toggle col p-1" ngbRadioGroup name="district_input" [(ngModel)]="selectedDistrict">  
       <label ngbButtonLabel class="btn-primary">
           <input ngbButton type="radio" value="{{district}}"> {{i+1 + " \u2014 " + district}}
-        </label>
-      </div>
+      </label>
+    </div>
 
     </div>
     <div class="card-footer">
-      <button type="button" (click)='getCandidates();' class="btn btn-primary mx-auto w-25 d-block">Go!</button>
+      <button type="button" (click)='getCandidates();' class="btn btn-primary mx-auto w-25 d-block" [ngClass]="{'active': selectedDistrict != '', 'disabled': selectedDistrict==''}">Go!</button>
     </div>
   </div>
 
@@ -36,12 +36,12 @@
   <div *ngIf='pageNumber == 1'>
       <div class="card-body">
 
-    <div class="btn-group btn-group-toggle;">
-        <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary">
+    <!-- <div class="btn-group btn-group-toggle col "> -->
+        <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary ">
           <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> {{candidate.name}}
           <img src="{{candidate.photo}}">
         </label>
-    </div>
+    <!-- </div> -->
     <hr>
 
     <input type="text" class="form-control" [(ngModel)]="writeInModel.writeIn1" [disabled]='!enableVoting(writeInModel.writeIn1, false)'/>
