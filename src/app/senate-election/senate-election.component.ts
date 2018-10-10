@@ -55,8 +55,20 @@ export class SenateElectionComponent implements OnInit {
     ]
   };
   
-  districts: string[] = ['1','2', '3', '4','5','6','7'];
-  selectedDistrict: string = "";
+  districts: any = [
+    "Sittner 1 & 2 Floor, Meske",
+    "Sittner 3 & 4 Floor", 
+    "Conard", 
+    "Forman",
+    "Mountain View, Birch Apartments",
+    "Hallmark, Faculty, Univeristy-Owned Housing",
+    "Off-Campus",
+    "Portland",
+    "Faculty",
+    "Staff"
+  ];
+
+  selectedDistrict: string = "1";
   candidates: any[] = [];
   candidateModel = {};
   writeInModel = {

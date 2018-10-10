@@ -1,5 +1,3 @@
-<!-- SELECT DISTRICT PAGE -->
-
 <div class="container">
     Senate Election  
   <div class="card">
@@ -19,9 +17,11 @@
   <div *ngIf='pageNumber == 0'>
     <div class="card-body">
 
-    <div *ngFor="let district of districts;" class="btn-group-vertical btn-group-toggle col p-1" ngbRadioGroup name="district_input" [(ngModel)]="selectedDistrict">  
+    <!-- SELECT DISTRICT PAGE -->
+
+    <div *ngFor="let district of districts; let i = index" class="btn-group-vertical btn-group-toggle col p-1" ngbRadioGroup name="district_input" [(ngModel)]="selectedDistrict">  
       <label ngbButtonLabel class="btn-primary">
-          <input ngbButton type="radio" value="{{district}}"> {{district}}
+          <input ngbButton type="radio" value="{{district}}"> {{i+1 + " \u2014 " + district}}
         </label>
       </div>
 
