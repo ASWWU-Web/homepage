@@ -36,12 +36,18 @@
   <div *ngIf='pageNumber == 1'>
       <div class="card-body">
 
-    <div class="row btn-group-toggle">
-        <label *ngFor="let candidate of candidates;" ngbButtonLabel class="btn-primary col p-1">
-          <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> {{candidate.name}}
-          <br>
-          <img src="{{candidate.photo}}">
-        </label>
+    <div class="row">
+        <div *ngFor="let candidate of candidates;" class="col-md p-1 card">
+          <div class="card-body">
+            <img src="{{candidate.photo}}">
+          </div>
+          <div class="card-footer btn-group-toggle">
+            <label ngbButtonLabel class="btn btn-primary">
+              <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> 
+              {{candidate.name}}
+            </label>
+          </div>
+        </div>
     </div>
     <hr>
 
