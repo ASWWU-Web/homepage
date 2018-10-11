@@ -40,17 +40,17 @@ export class SenateElectionComponent implements OnInit {
       {
         "username":"Sheldon.Woodward",
         "name": "Sheldon Woodward",
-        "photo": ""
+        "photo": "https://aswwu.com/media/img-sm/profiles/1819/01389-2027616.jpg"
       },
       {
         "username":"Sheldon.Woodward2",
         "name": "Sheldon Woodward2",
-        "photo": ""
+        "photo": "https://aswwu.com/media/img-sm/profiles/1819/01389-2027616.jpg"
       },
       {
         "username":"Sheldon.Woodward3",
         "name": "Sheldon Woodward3",
-        "photo": ""
+        "photo": "https://aswwu.com/media/img-sm/profiles/1819/01389-2027616.jpg"
       }
     ]
   };
@@ -91,7 +91,7 @@ export class SenateElectionComponent implements OnInit {
     if (this.selectedDistrict == '') {
       return;
     }
-    
+
     let districtNum = 0;
     let i = 0;
     for (let district of this.districts) {
