@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Common } from '@angular/common';
 import { RequestService } from '../services/request.service';
 
 @Component({
@@ -55,26 +56,29 @@ export class SenateElectionComponent implements OnInit {
     ]
   };
   
-  districts: any = [
-    "Sittner 1 & 2 Floor, Meske",
-    "Sittner 3 & 4 Floor", 
-    "Conard", 
-    "Forman",
-    "Mountain View, Birch Apartments",
-    "Hallmark, Faculty, Univeristy-Owned Housing",
-    "Off-Campus",
-    "Portland",
-    "Faculty",
-    "Staff"
+  districts: string[][] = [
+    ["1",  "Sittner 1 & 2 Floor, Meske"],
+    ["2",  "Sittner 3 & 4 Floor"], 
+    ["3",  "Conard"], 
+    ["4",  "Forman"],
+    ["5",  "Mountain View, Birch Apartments"],
+    ["6",  "Hallmark, Faculty, Univeristy-Owned Housing"],
+    ["7",  "Off-Campus"],
+    ["8",  "Portland"],
+    ["9",  "Faculty"],
+    ["10", "Staff"]
   ];
 
-  selectedDistrict: string = "";
+  // selectedDistrict: string = "";
+  districtModel: string = ""
   candidates: any[] = [];
-  candidateModel = {};
+  candidateModel: any = {};
   writeInModel = {
     writeIn1: "",
     writeIn2: ""
   };
+
+  submissionSuccess = null;
 
   ngOnInit() {
   }
@@ -88,7 +92,7 @@ export class SenateElectionComponent implements OnInit {
   
 
   getCandidates() {
-    if (this.selectedDistrict == '') {
+    if (this.districtModel == '') {
       return;
     }
 
@@ -96,7 +100,7 @@ export class SenateElectionComponent implements OnInit {
     let i = 0;
     for (let district of this.districts) {
       i = i + 1;
-      if (district == this.selectedDistrict) {
+      if (district[0] == this.districtModel) {
         districtNum = i;
         break;
       }
@@ -113,22 +117,32 @@ export class SenateElectionComponent implements OnInit {
 
     // Page 1 is the candidates page
     this.pageNumber = 1;
-    // this.showDistricts = false;
-    // this.showCandidates = true;
-    // this.showSubmissionStatus = false;
+    window.scrollTo(0,0);
   }
 
   submit() {
-    console.log(this.buildJsonResponse());
     let postURI = 'senate-election';
-    this.rs.post(postURI, this.buildJsonResponse(), (data)=>{}, (data)=>{});
+    this.rs.post(postURI, this.buildJsonResponse(), (data)=>{this.submissionSuccess = true;}, (data)=>{this.submissionSuccess = false});
     
     // Page 2 is the submission page
     this.pageNumber = 2;
-    // this.showDistricts = false;
-    // this.showCandidates = false;
-    // this.showSubmissionStatus = true;
+    window.scrollTo(0,0);
   }
+
+  startOver() {
+    // hide pages
+    this.pageNumber=null;
+    //reset models
+    this.districtModel = "";
+    this.candidateModel = {};
+    this.writeInModel.writeIn1 = "";
+    this.writeInModel.writeIn2 = "";
+    this.submissionSuccess = null;
+    // go to first page (district selection)
+    this.pageNumber = 0;
+    window.scrollTo(0,0);
+  }
+
 
   valueChange($event, username){
     this.candidateModel[username] = $event;
