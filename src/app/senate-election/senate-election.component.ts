@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Common } from '@angular/common';
 import { RequestService } from '../services/request.service';
 
 @Component({
