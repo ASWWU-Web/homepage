@@ -1,6 +1,6 @@
 <div class="container pb-5 pt-3">
     <h3>Senate Election</h3>
-  <div class="card">
+  <div class="">
     <div class="card-header navbar-nav-scroll scrollable">
       <ul class="nav nav-tabs card-header-tabs flex-nowrap">
         <li class="nav-item">
@@ -27,7 +27,7 @@
 
     </div>
     <div class="card-footer">
-      <button type="button" (click)='getCandidates();' class="btn btn-primary mx-auto w-25 d-block" [ngClass]="{'active': districtModel != '', 'disabled': districtModel==''}">Go!</button>
+      <button type="button" (click)='getCandidates();' class="btn btn-primary mx-auto w-100 d-block" [ngClass]="{'active': districtModel != '', 'disabled': districtModel==''}">Go!</button>
     </div>
   </div>
 
@@ -38,12 +38,10 @@
       <h4>District {{districtModel}} Senators</h4>
       <p>Select two candidates or write in your own.</p>
 
-      <div class="row">
+      <div class="row no-gutters">
         <!-- CANDIDATE CARD -->
-        <div *ngFor="let candidate of candidates;" class="col-md p-1 card">
-          <div class="card-body">
-            <img class="img-fluid mx-auto d-block" src="{{candidate.photo}}">
-          </div>
+        <div *ngFor="let candidate of candidates" class="col-6 col-md-4"><div class="card">
+            <img class="card-img-top mx-auto d-block" src="{{candidate.photo}}" [ngClass]="{'disabled-photo': !enableVoting(candidate.username, true)}">
           <div class="card-footer btn-group-toggle">
             <label ngbButtonLabel class="btn btn-primary btn-nowrap mx-auto w-100 d-block">
               <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> 
@@ -51,7 +49,7 @@
             </label>
           </div>
         </div>
-
+      </div>
       </div>
       <hr>
 

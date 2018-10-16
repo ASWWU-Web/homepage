@@ -10,3 +10,7 @@
 .disabled {
     background-color: gray;
 }
+
+.disabled-photo {
+    filter: opacity(.5);
+}

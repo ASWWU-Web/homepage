@@ -40,16 +40,31 @@ export class SenateElectionComponent implements OnInit {
       {
         "username":"Sheldon.Woodward",
         "name": "Sheldon Woodward",
-        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+        "photo": "https://aswwu.com/media/img-md/profiles/1819/02523-2029909.jpg"
       },
       {
         "username":"Sheldon.Woodward2",
         "name": "Sheldon Woodward2",
-        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+        "photo": "https://aswwu.com/media/img-md/profiles/1819/02523-2029909.jpg"
       },
       {
         "username":"Sheldon.Woodward3",
         "name": "Sheldon Woodward3",
+        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+      },
+      {
+        "username":"Sheldon.Woodward4",
+        "name": "Sheldon Woodward4",
+        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+      },
+      {
+        "username":"Sheldon.Woodward5",
+        "name": "Sheldon Woodward5",
+        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+      },
+      {
+        "username":"Sheldon.Woodward6",
+        "name": "Sheldon Woodward6",
         "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
       }
     ]
