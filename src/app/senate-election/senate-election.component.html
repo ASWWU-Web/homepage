@@ -33,7 +33,7 @@
 
   <!-- SELECT CANDIDATE PAGE -->
 
-  <div *ngIf='pageNumber == 1'>
+  <div *ngIf='pageNumber == 1 && candidates.length > 0'>
     <div class="card-body">
       <h4>District {{districtModel}} Senators</h4>
       <p>Select two candidates or write in your own.</p>
@@ -45,7 +45,7 @@
           <div class="card-footer btn-group-toggle">
             <label ngbButtonLabel class="btn btn-primary btn-nowrap mx-auto w-100 d-block">
               <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> 
-              {{candidate.name}}
+              {{candidate.full_name}}
             </label>
           </div>
         </div>

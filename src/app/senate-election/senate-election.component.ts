@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../services/request.service';
+import { CURRENT_YEAR, MEDIA_SM } from '../config';
 
 @Component({
   selector: 'app-senate-election',
@@ -35,40 +36,40 @@ export class SenateElectionComponent implements OnInit {
   // Page 0 is districts page
   pageNumber: number = 0;
   
-  candidatesJSON = {
-    "candidates": [
-      {
-        "username":"Sheldon.Woodward",
-        "name": "Sheldon Woodward",
-        "photo": "https://aswwu.com/media/img-md/profiles/1819/02523-2029909.jpg"
-      },
-      {
-        "username":"Sheldon.Woodward2",
-        "name": "Sheldon Woodward2",
-        "photo": "https://aswwu.com/media/img-md/profiles/1819/02523-2029909.jpg"
-      },
-      {
-        "username":"Sheldon.Woodward3",
-        "name": "Sheldon Woodward3",
-        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
-      },
-      {
-        "username":"Sheldon.Woodward4",
-        "name": "Sheldon Woodward4",
-        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
-      },
-      {
-        "username":"Sheldon.Woodward5",
-        "name": "Sheldon Woodward5",
-        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
-      },
-      {
-        "username":"Sheldon.Woodward6",
-        "name": "Sheldon Woodward6",
-        "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
-      }
-    ]
-  };
+  candidatesJSON = {};
+  //   "candidates": [
+  //     {
+  //       "username":"Sheldon.Woodward",
+  //       "name": "Sheldon Woodward",
+  //       "photo": "https://aswwu.com/media/img-md/profiles/1819/02523-2029909.jpg"
+  //     },
+  //     {
+  //       "username":"Sheldon.Woodward2",
+  //       "name": "Sheldon Woodward2",
+  //       "photo": "https://aswwu.com/media/img-md/profiles/1819/02523-2029909.jpg"
+  //     },
+  //     {
+  //       "username":"Sheldon.Woodward3",
+  //       "name": "Sheldon Woodward3",
+  //       "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+  //     },
+  //     {
+  //       "username":"Sheldon.Woodward4",
+  //       "name": "Sheldon Woodward4",
+  //       "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+  //     },
+  //     {
+  //       "username":"Sheldon.Woodward5",
+  //       "name": "Sheldon Woodward5",
+  //       "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+  //     },
+  //     {
+  //       "username":"Sheldon.Woodward6",
+  //       "name": "Sheldon Woodward6",
+  //       "photo": "https://aswwu.com/media/img-sm/images/default_mask/default.jpg"
+  //     }
+  //   ]
+  // };
   
   districts: string[][] = [
     ["1",  "Sittner 1 & 2 Floor, Meske"],
@@ -103,31 +104,30 @@ export class SenateElectionComponent implements OnInit {
     }
   }
 
-  
+  addCandidatePhotos() {
+    let i = 0;
+    let uriBase = '/profile/' + CURRENT_YEAR + '/';
+    for (let candidate of this.candidates ){
+      let uri = uriBase + candidate.username;
+      this.rs.get((uri), (data) => {
+        console.log(candidate, i, this.candidates[i])
+        this.candidates[i].photo = MEDIA_SM + '/'  + data.photo;
+        i = i + 1;
+      }, (data) => {})
+    }
+
+  }
 
   getCandidates() {
     if (this.districtModel == '') {
       return;
     }
-
-    let districtNum = 0;
-    let i = 0;
-    for (let district of this.districts) {
-      i = i + 1;
-      if (district[0] == this.districtModel) {
-        districtNum = i;
-        break;
-      }
-    }
     
-    // console.log(this.selectedDistrict);
-    this.rs.get(('senate_election/candidate/' + districtNum), (data) => {
-      data = this.candidatesJSON;
-      console.log(data);
+    this.rs.get(('senate_election/candidate/' + this.districtModel), (data) => {
+      this.candidates = data.candidates;
+      this.addCandidatePhotos();
+      this.buildCandidateModel();
     }, (data) => {})
-    
-    this.candidates = this.candidatesJSON.candidates;
-    this.buildCandidateModel();
 
     // Page 1 is the candidates page
     this.pageNumber = 1;
@@ -135,7 +135,7 @@ export class SenateElectionComponent implements OnInit {
   }
 
   submit() {
-    let postURI = 'senate-election';
+    let postURI = 'senate_election/vote/' + this.districtModel;
     this.rs.post(postURI, this.buildJsonResponse(), (data)=>{this.submissionSuccess = true;}, (data)=>{this.submissionSuccess = false});
     
     // Page 2 is the submission page
