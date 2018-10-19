@@ -104,18 +104,11 @@ export class SenateElectionComponent implements OnInit {
     }
   }
 
-  addCandidatePhotos() {
-    let i = 0;
-    let uriBase = '/profile/' + CURRENT_YEAR + '/';
-    for (let candidate of this.candidates ){
-      let uri = uriBase + candidate.username;
-      this.rs.get((uri), (data) => {
-        console.log(candidate, i, this.candidates[i])
-        this.candidates[i].photo = MEDIA_SM + '/'  + data.photo;
-        i = i + 1;
-      }, (data) => {})
-    }
-
+  addCandidatePhoto(username, i){
+    let uri = '/profile/' + CURRENT_YEAR + '/' + username;
+    this.rs.get(uri, (data) => {
+      this.candidates[i].photo = MEDIA_SM + '/' + data.photo;
+    }, (data) => {})
   }
 
   getCandidates() {
@@ -125,7 +118,11 @@ export class SenateElectionComponent implements OnInit {
     
     this.rs.get(('senate_election/candidate/' + this.districtModel), (data) => {
       this.candidates = data.candidates;
-      this.addCandidatePhotos();
+      let i = 0;
+      for (let candidate of this.candidates) {
+        this.addCandidatePhoto(candidate.username, i);
+        i = i + 1;
+      }
       this.buildCandidateModel();
     }, (data) => {})
 
