@@ -121,10 +121,10 @@ export class SenateElectionComponent implements OnInit {
     }
     
     // console.log(this.selectedDistrict);
-    // this.rs.get(('senate-election/candidates/' + districtNum), (data) => {
-    //   data = this.candidatesJSON;
-    //   console.log(data);
-    // }, (data) => {})
+    this.rs.get(('senate_election/candidate/' + districtNum), (data) => {
+      data = this.candidatesJSON;
+      console.log(data);
+    }, (data) => {})
     
     this.candidates = this.candidatesJSON.candidates;
     this.buildCandidateModel();
