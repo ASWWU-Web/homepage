@@ -1,0 +1,16 @@
+.scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.btn-nowrap {
+    white-space: normal;
+}
+
+.disabled {
+    background-color: gray;
+}
+
+.disabled-photo {
+    filter: opacity(.5);
+}
