@@ -23,7 +23,8 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { PageCardComponent } from './page-card/page-card.component';
 import { JobCardComponent } from './job-card/job-card.component';
 import { ScrollCardsComponent } from './scroll-cards/scroll-cards.component';
-import { SenateElectionComponent } from './senate-election/senate-election.component'
+import { SenateElectionComponent } from './senate-election/senate-election.component';
+import { ElectionsAdminComponent } from './elections-admin/elections-admin.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SenateElectionComponent } from './senate-election/senate-election.compo
     PageCardComponent,
     JobCardComponent,
     ScrollCardsComponent,
-    SenateElectionComponent
+    SenateElectionComponent,
+    ElectionsAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,10 @@ import { SenateElectionComponent } from './senate-election/senate-election.compo
       {
         'path': 'search',
         component: SearchComponent
+      },
+      {
+        'path': 'senate-election/admin',
+        component: ElectionsAdminComponent
       },
       {
         'path': 'senate-election',
