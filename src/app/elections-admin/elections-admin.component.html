@@ -1,0 +1,17 @@
+  <div class="container">
+    <div class="input-group mx-auto m-3">
+      <div class="input-group mb-3">
+        <!-- <label>username</label> -->
+        <input type="text" class="form-control" placeholder="Username" [(ngModel)]="candidate.username"/>
+      </div>
+      <div class="input-group mb-3">
+        <!-- <label>full name</label> -->
+        <input type="text" class="form-control" placeholder="Display Name" [(ngModel)]="candidate.full_name"/>
+      </div>
+      <div class="input-group mb-3">
+        <!-- <label>district</label> -->
+        <input type="text" class="form-control" placeholder="District" [(ngModel)]="district"/>
+      </div>
+      <button type="button" (click)='submit();' class="btn btn-primary mx-auto w-100 d-block">ADD CANDIDATE</button>
+    </div>
+  </div>
