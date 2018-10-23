@@ -20,7 +20,7 @@
     <!-- SELECT DISTRICT PAGE -->
 
     <div *ngFor="let district of districts" class="btn-group-vertical btn-group-toggle col p-1" ngbRadioGroup name="district_input" [(ngModel)]="districtModel">  
-      <label ngbButtonLabel class="btn-primary btn-nowrap text-left">
+      <label ngbButtonLabel class="btn-outline-primary btn-nowrap text-left">
         <input ngbButton type="radio" value="{{district[0]}}">{{district[0] + " \u2014 " + district[1]}}
       </label>
     </div>
@@ -43,7 +43,7 @@
         <div *ngFor="let candidate of candidates" class="col-6 col-md-4"><div class="card">
             <img class="card-img-top mx-auto d-block" src="{{candidate.photo}}" [ngClass]="{'disabled-photo': !enableVoting(candidate.username, true)}">
           <div class="card-footer btn-group-toggle">
-            <label ngbButtonLabel class="btn btn-primary btn-nowrap mx-auto w-100 d-block">
+            <label ngbButtonLabel class="btn btn-outline-primary btn-nowrap mx-auto w-100 d-block">
               <input ngbButton type="checkbox" [ngModel]="candidateModel[candidate.username]" (ngModelChange)="valueChange($event, candidate.username)" [disabled]='!enableVoting(candidate.username, true)'> 
               {{candidate.full_name}}
             </label>
