@@ -9,6 +9,16 @@ export class OpenForumComponent implements OnInit {
 
   constructor() { }
 
+  officers = [
+    'President',
+    'Vice President',
+    'Treasurer',
+    'Social VP',
+    'Spiritual VP'
+  ];
+
+  selectedOfficer = '';
+
   ngOnInit() {
   }
 

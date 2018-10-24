@@ -1,3 +1,10 @@
 <p>
-  open-forum works!
+  Send a message directly to the ASWWU administration.
 </p>
+
+<div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="selectedOfficer">
+  <label *ngFor="let officer of officers" ngbButtonLabel class="btn-primary">
+    <input ngbButton type="radio" [value]="officer"> {{officer}}
+  </label>
+</div>
+
