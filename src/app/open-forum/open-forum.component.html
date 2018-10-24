@@ -2,8 +2,8 @@
   Send a message directly to the ASWWU administration.
 </p>
 
-<div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="selectedOfficer">
-  <label *ngFor="let officer of officers" ngbButtonLabel class="btn-primary">
+<div *ngFor="let officer of officers" class="btn-group btn-group-toggle col-md-4 p-1" ngbRadioGroup name="radioBasic" [(ngModel)]="selectedOfficer">
+  <label ngbButtonLabel class="btn-outline-primary w-100">
     <input ngbButton type="radio" [value]="officer"> {{officer}}
   </label>
 </div>
