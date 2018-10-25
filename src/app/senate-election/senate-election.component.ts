@@ -108,7 +108,7 @@ export class SenateElectionComponent implements OnInit {
     let uri = '/profile/' + CURRENT_YEAR + '/' + username;
     this.rs.get(uri, (data) => {
       let photoURI = MEDIA_SM + '/'
-      if (data.photo) {
+      if (data.photo != "None") {
         photoURI =  photoURI + data.photo;
       }
       else {
