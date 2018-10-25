@@ -3,18 +3,19 @@
 </p>
 
 <div *ngFor="let officer of officers" class="btn-group btn-group-toggle col-md-4 p-1" ngbRadioGroup name="radioBasic" [(ngModel)]="selectedOfficer">
-  <label ngbButtonLabel class="btn-outline-primary w-100">
+  <label ngbButtonLabel class="w-100 btn-aswwu-outline-dark">
     <input ngbButton type="radio" [value]="officer"> {{officer}}
   </label>
 </div>
 
-<form>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="SubjectInput">Subject</label>
     <input type="text" class="form-control" id="SubjectInput">
-  </div>
+  </div> -->
 
   <div class="form-group">
     <label for="MessageInput">Message</label>
-    <textarea class="form-control" id="MessageInput" rows="3"></textarea>
+    <textarea class="form-control btn-aswwu-outline-dark" id="MessageInput" rows="3"></textarea>
   </div>
+
+  <button type="button" (click)='submitMessage();' class="btn btn-primary mx-auto w-100">Send</button>

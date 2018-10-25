@@ -1,0 +1,19 @@
+.btn-aswwu-outline-dark {
+    font-family: var(--font-2);
+    color: var(--navbar-dark);
+    font-weight: bold;
+    background-color: rgba(0,0,0,0);
+    border: 3px solid var(--aswwu-dark);
+    border-radius: 0px;
+
+}
+
+.btn-aswwu-outline-dark:hover{
+    background-color: var(--aswwu-dark);
+    color: white;
+}
+
+.btn-aswwu-outline-dark:active{
+    background-color: var(--aswwu-dark);
+    color: white;
+}
