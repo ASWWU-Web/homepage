@@ -9,6 +9,7 @@
 
 .disabled {
     background-color: gray;
+    color: white;
 }
 
 .disabled-photo {

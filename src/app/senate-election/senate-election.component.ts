@@ -107,7 +107,14 @@ export class SenateElectionComponent implements OnInit {
   addCandidatePhoto(username, i){
     let uri = '/profile/' + CURRENT_YEAR + '/' + username;
     this.rs.get(uri, (data) => {
-      this.candidates[i].photo = MEDIA_SM + '/' + data.photo;
+      let photoURI = MEDIA_SM + '/'
+      if (data.photo) {
+        photoURI =  photoURI + data.photo;
+      }
+      else {
+        photoURI = photoURI + 'images/default_mask/default.jpg';
+      }
+      this.candidates[i].photo = photoURI;
     }, (data) => {})
   }
 
