@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestService } from '../services/request.service';
 
 @Component({
   selector: 'open-forum',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpenForumComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rs: RequestService) { }
 
   officers = [
     'President',
@@ -20,7 +21,32 @@ export class OpenForumComponent implements OnInit {
 
   selectedOfficer = '';
 
+  messageBody = '';
+
+  messsageLength = this.messageBody.length;
+
+  maxChars=1000;
+
+  minChars=100;
+
+  formValid: boolean = true;
+
   ngOnInit() {
+  }
+
+  checkForm(): boolean {
+    
+    return true;
+  }
+
+  sendMessage() {
+    let valid = this.checkForm();
+    let uri = "homepage/open_forum";
+    let data = {
+      "recipient": this.selectedOfficer,
+      "message_body": this.messageBody.slice(0, this.maxChars),
+    };
+    this.rs.post(uri, data, (data)=>{console.log(data)}, (data)=>{console.log(data)} );
   }
 
 }
