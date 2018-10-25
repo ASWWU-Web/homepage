@@ -1,9 +1,9 @@
-<p>
+<p class="text-center">
   Send a message directly to the ASWWU administration.
 </p>
 
 <div *ngFor="let officer of officers" class="btn-group btn-group-toggle col-md-4 p-1" ngbRadioGroup name="radioBasic" [(ngModel)]="selectedOfficer">
-  <label ngbButtonLabel class="w-100 btn-aswwu-outline-dark">
+  <label ngbButtonLabel class="w-100 btn-outline-dark aswwu-outline-dark">
     <input ngbButton type="radio" [value]="officer"> {{officer}}
   </label>
 </div>
@@ -13,9 +13,11 @@
     <input type="text" class="form-control" id="SubjectInput">
   </div> -->
 
-  <div class="form-group">
+  <div class="form-group p-1">
     <label for="MessageInput">Message</label>
-    <textarea class="form-control btn-aswwu-outline-dark" id="MessageInput" rows="3"></textarea>
+    <textarea class="form-control aswwu-outline-dark" id="MessageInput" rows="3"></textarea>
+    <button type="button" (click)='submitMessage();' class="btn btn-outline-dark aswwu-outline-dark mx-auto w-100 mt-3 p-1">Send</button>
   </div>
 
-  <button type="button" (click)='submitMessage();' class="btn btn-primary mx-auto w-100">Send</button>
+  <div class="row"><div class="col">
+  </div></div>

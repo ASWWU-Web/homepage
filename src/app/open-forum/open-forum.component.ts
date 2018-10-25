@@ -14,7 +14,8 @@ export class OpenForumComponent implements OnInit {
     'Vice President',
     'Treasurer',
     'Social VP',
-    'Spiritual VP'
+    'Spiritual VP',
+    'Other'
   ];
 
   selectedOfficer = '';
