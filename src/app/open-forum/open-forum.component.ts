@@ -16,37 +16,50 @@ export class OpenForumComponent implements OnInit {
     'Treasurer',
     'Social VP',
     'Spiritual VP',
-    'Other'
+    'Other Questions'
   ];
 
   selectedOfficer = '';
-
   messageBody = '';
-
-  messsageLength = this.messageBody.length;
-
   maxChars=1000;
-
   minChars=100;
 
-  formValid: boolean = true;
+  formReady: boolean = false;
+  sendStatus = '';
+  showSendStatus = false;
+  sendFailed = false;
 
   ngOnInit() {
   }
 
   checkForm(): boolean {
-    
-    return true;
+    if (this.messageBody.length >= this.minChars && this.selectedOfficer != '') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   sendMessage() {
-    let valid = this.checkForm();
     let uri = "homepage/open_forum";
     let data = {
       "recipient": this.selectedOfficer,
       "message_body": this.messageBody.slice(0, this.maxChars),
     };
-    this.rs.post(uri, data, (data)=>{console.log(data)}, (data)=>{console.log(data)} );
+    let success = false;
+    if (this.checkForm()) {
+      this.showSendStatus = true;
+      this.sendFailed = false;
+      this.sendStatus = 'Loading...';
+      this.rs.post(uri, data, (data)=>{
+        this.sendStatus = 'Message Sent';
+        this.selectedOfficer = '';
+        this.messageBody = '';
+      }, (data)=>{
+        this.sendFailed = true;
+        this.sendStatus = 'Delivery Failed! Please send an email to aswwu.webmaster@wallawalla.edu to let us know something went wrong.'
+      } );
+    }
   }
 
 }
