@@ -13,7 +13,7 @@ export class OpenForumComponent implements OnInit {
   officers = [
     'President',
     'Vice President',
-    'Treasurer',
+    'Financial VP',
     'Social VP',
     'Spiritual VP',
     'Other Questions'
