@@ -4,7 +4,6 @@
     --font-1: 'Dosis', sans-serif; /* Headers and big text */
     --font-2: 'Raleway', sans-serif; /* Generic Text */
     --font-test: "Brush Script MT", cursive; /* an eye-sore font to make sure it's working */
-    --aswwu-dark: #343a40;
 }
 
 h1, h2, h3, h4, h5, h6 {

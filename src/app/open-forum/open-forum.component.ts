@@ -22,7 +22,7 @@ export class OpenForumComponent implements OnInit {
   selectedOfficer = '';
   messageBody = '';
   maxChars=1000;
-  minChars=100;
+  minChars=10;
 
   formReady: boolean = false;
   sendStatus = '';
@@ -57,9 +57,8 @@ export class OpenForumComponent implements OnInit {
         this.messageBody = '';
       }, (data)=>{
         this.sendFailed = true;
-        this.sendStatus = 'Delivery Failed! Please send an email to aswwu.webmaster@wallawalla.edu to let us know something went wrong.'
+        this.sendStatus = 'Delivery failed! Please contact aswwu.webmaster@wallawalla.edu for further assistance.';
       } );
     }
   }
-
 }

@@ -3,6 +3,11 @@
   font-weight: bold;
   border: 3px solid;
   border-radius: 0px;
+  border-color: var(--gray-dark);
+}
+
+.aswwu-outline-dark:hover {
+  border-color: var(--gray-dark);
 }
 
 .btn.disabled {
