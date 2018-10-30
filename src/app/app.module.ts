@@ -24,7 +24,8 @@ import { PageCardComponent } from './page-card/page-card.component';
 import { JobCardComponent } from './job-card/job-card.component';
 import { ScrollCardsComponent } from './scroll-cards/scroll-cards.component';
 import { SenateElectionComponent } from './senate-election/senate-election.component';
-import { ElectionsAdminComponent } from './elections-admin/elections-admin.component'
+import { ElectionsAdminComponent } from './elections-admin/elections-admin.component';
+import { OpenForumComponent } from './open-forum/open-forum.component'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ElectionsAdminComponent } from './elections-admin/elections-admin.compo
     JobCardComponent,
     ScrollCardsComponent,
     SenateElectionComponent,
-    ElectionsAdminComponent
+    ElectionsAdminComponent,
+    OpenForumComponent
   ],
   imports: [
     BrowserModule,
