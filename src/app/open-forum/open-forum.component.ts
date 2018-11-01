@@ -28,11 +28,8 @@ export class OpenForumComponent implements OnInit {
   sendStatus = '';
   showSendStatus = false;
   sendFailed = false;
-  loggedin = false;
 
-  ngOnInit() {
-    this.loggedin = this.rs.isLoggedOn();
-  }
+  ngOnInit() { }
 
   checkForm(): boolean {
     if (this.messageBody.length >= this.minChars && this.selectedOfficer != '' && this.rs.isLoggedOn()) {
@@ -62,5 +59,9 @@ export class OpenForumComponent implements OnInit {
         this.sendStatus = 'Delivery failed! Please contact aswwu.webmaster@wallawalla.edu for further assistance.';
       } );
     }
+  }
+
+  getLoggedOn() {
+    return this.rs.isLoggedOn();
   }
 }

@@ -10,7 +10,7 @@
 
 <div class="form-group p-1">
   <label for="MessageInput">Message</label>
-  <textarea class="form-control aswwu-outline-dark font-weight-light" id="MessageInput" [(ngModel)]="messageBody" rows="3" minlength="{{minChars}}" maxlength="{{maxChars}}" [placeholder]="!loggedin ? 'Log in to send a message.': 'Message'" [disabled]="!loggedin"></textarea>
+  <textarea class="form-control aswwu-outline-dark font-weight-light" id="MessageInput" [(ngModel)]="messageBody" rows="3" minlength="{{minChars}}" maxlength="{{maxChars}}" [placeholder]="!getLoggedOn() ? 'Log in to send a message.': 'Message'" [disabled]="!getLoggedOn()"></textarea>
   <p class="text-right"><small><span class="font-weight-bold" [ngClass]="{'text-danger': (messageBody.length < minChars)}">{{messageBody.length}}</span> / {{maxChars}}</small></p>
   <button type="button" [ngClass]="{'disabled btn-outline-dark': !checkForm(), 'btn-dark': checkForm()}" (click)='sendMessage();' class="btn aswwu-outline-dark mx-auto w-100 mt-3 p-1">Send</button>
   <p *ngIf="showSendStatus"><small [ngClass]="{'text-danger': sendFailed}">{{sendStatus}}</small></p>
