@@ -16,7 +16,7 @@ export class OpenForumComponent implements OnInit {
     'Financial VP',
     'Social VP',
     'Spiritual VP',
-    'Other Questions'
+    'Marketing VP'
   ];
 
   selectedOfficer = '';
@@ -28,12 +28,14 @@ export class OpenForumComponent implements OnInit {
   sendStatus = '';
   showSendStatus = false;
   sendFailed = false;
+  loggedin = false;
 
   ngOnInit() {
+    this.loggedin = this.rs.isLoggedOn();
   }
 
   checkForm(): boolean {
-    if (this.messageBody.length >= this.minChars && this.selectedOfficer != '') {
+    if (this.messageBody.length >= this.minChars && this.selectedOfficer != '' && this.rs.isLoggedOn()) {
       return true;
     } else {
       return false;
