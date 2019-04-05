@@ -8,22 +8,11 @@ import { NgStyle } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  bgLink = 'https://aswwu.com/media/background.php';
+  bgLink = 'https://aswwu.com/media/images/background/background.jpg';
   bgLinkChanged = 'url(' + this.bgLink + ')';
 
   constructor() { }
 
   ngOnInit() {
-    if ( !(window.navigator.userAgent.match(/Android/i) || window.navigator.userAgent.match(/iPhone|iPad|iPod/i)) ) {
-      setInterval(() => {
-        this.generateNewBgLink();
-      }, 10000);
-    }
-  }
-
-  private generateNewBgLink() {
-    const d = new Date();
-    const time = d.getTime();
-    this.bgLinkChanged = 'url(' + this.bgLink + '?' + time + ')';
   }
 }
