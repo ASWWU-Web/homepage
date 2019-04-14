@@ -43,7 +43,7 @@ export class RequestService {
   verify(cb?: any): void {
     //TODO: Determine if the token really should be updated. (ie. Only if the
     // token is older than 1 hour should a new one be generated.)
-    if (document.cookie.search("token=") !== -1) {
+    if (document.cookie.search("loggedin=") !== -1) {
       this.verifyGet("verify", data => {
         //Log in the user
         let user = data.user || null;
