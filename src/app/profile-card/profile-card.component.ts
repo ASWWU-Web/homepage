@@ -4,7 +4,7 @@ import { RequestService } from '../services/request.service';
 import { resolveMaskImage } from '../resolveMaskImage';
 
 import { environment } from '../../environments/environment';
-import { MEDIA_URI, MEDIA_XS, MEDIA_SM } from '../config'
+import { MEDIA_URI, MEDIA_XS, MEDIA_SM } from '../../shared-ng/config';
 
 @Component({
   selector: 'profile-card',

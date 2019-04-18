@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestService } from '../services/request.service';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
-import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
+import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../../shared-ng/config';
 
 @Component({
   selector: 'user-bubble',
