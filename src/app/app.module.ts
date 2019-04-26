@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RequestService } from '../shared-ng/services/services';
 import { HermesService } from '../shared-ng/services/services';
+import { HomepageRequestService } from '../shared-ng/services/services';
 import { SuperDuperService } from './services/services';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from '../shared-ng/components/nav-bar/nav-bar.component';
@@ -54,7 +55,7 @@ import { SharedNgContainerComponent } from '../shared-ng/components/components';
     NgbModule.forRoot(),
     AppRoutingModule,
   ],
-  providers: [RequestService, CalendarService, SuperDuperService, HermesService],
+  providers: [RequestService, CalendarService, SuperDuperService, HermesService, HomepageRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
