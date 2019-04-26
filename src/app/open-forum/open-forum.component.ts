@@ -33,7 +33,7 @@ export class OpenForumComponent implements OnInit {
   ngOnInit() { }
 
   checkForm(): boolean {
-    if (this.messageBody.length >= this.minChars && this.selectedOfficer !== '' && this.rs.isLoggedOn()) {
+    if (this.messageBody.length >= this.minChars && this.selectedOfficer !== '' && this.auth.isLoggedIn()) {
       return true;
     } else {
       return false;
@@ -51,14 +51,7 @@ export class OpenForumComponent implements OnInit {
       this.showSendStatus = true;
       this.sendFailed = false;
       this.sendStatus = 'Loading...';
-      this.hprs.post(uri, data, (data) => {
-        this.sendStatus = 'Message Sent';
-        this.selectedOfficer = '';
-        this.messageBody = '';
-      }, (data) => {
-        this.sendFailed = true;
-        this.sendStatus = 'Delivery failed! Please contact aswwu.webmaster@wallawalla.edu for further assistance.';
-      } );
+      this.hprs.createForum(data);
     }
   }
 

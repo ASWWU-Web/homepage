@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RequestService } from '../services/request.service';
+import { RequestService } from '../../shared-ng/services/services';
 import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../../shared-ng/config';
 import { resolveCoverImage } from '../resolveCoverImage';
 
@@ -23,7 +23,7 @@ export class PageCardComponent implements OnInit {
 
   ngOnInit() {
     if (this.showMeta) {
-      this.requestService.get('/profile/' + CURRENT_YEAR + '/' + this.page['author'], (data) => {
+      this.requestService.get('/profile/' + CURRENT_YEAR + '/' + this.page['author']).subscribe( (data) => {
         this.profile = data;
       }, null);
     }

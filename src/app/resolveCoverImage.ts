@@ -1,7 +1,7 @@
 import { environment } from '../shared-ng/environments/environment';
 import { MEDIA_URI } from '../shared-ng/config';
 
-export function resolveCoverImage(cover_image_URI:string, media_link:string = MEDIA_URI) {
+export function resolveCoverImage(cover_image_URI: string, media_link: string = MEDIA_URI) {
   if (environment.production) {
     // TODO: Check if the image in question can be resolved locally if not
     // request it from the sever.

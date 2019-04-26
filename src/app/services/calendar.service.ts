@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { RequestService } from 'src/shared-ng/services/services';
-import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class CalendarService {
