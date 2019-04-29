@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import 'rxjs/add/operator/do';
+import {tap} from 'rxjs/operators';
 
 import { SuperDuperService } from '../services/super-duper.service';
 
@@ -24,12 +24,13 @@ export class SearchComponent implements OnInit {
     const sub = this.route.params.subscribe(params => {
       this.resultsReady = 1;
       this.parameterSearch = params['query'];
-      this.searchService.SearchAndReturnObservableResults(this.parameterSearch).do(([mask, pages, jobs]) => {
+      this.searchService.SearchAndReturnObservableResults(this.parameterSearch).pipe(
+        tap(([mask, pages, jobs]) => {
         this.profileData = mask;
         this.jobData = jobs;
         this.pageData = pages;
         this.resultsReady = 2;
-      }).subscribe();
+      })).subscribe();
     });
   }
 }
