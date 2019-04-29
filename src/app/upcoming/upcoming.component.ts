@@ -27,7 +27,7 @@ export class UpcomingComponent implements OnInit {
     this.ready = false;
     this.upcomings = new Array<UpcomingModel>();
     calendarService.getUpcomings().then(res => {
-      this.results = res.json().items;
+      this.results = res.items;
       for (const key in this.results) {
         if (this.results.hasOwnProperty(key)) {
           if (this.results[key].summary.slice(0, 5) === 'ASWWU') {

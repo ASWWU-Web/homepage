@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RequestService } from '../services/request.service';
+import { HomepageRequestService } from '../../shared-ng/services/services';
+import { AuthService } from '../../shared-ng/services/auth.service';
 
 @Component({
   selector: 'open-forum',
@@ -8,7 +9,7 @@ import { RequestService } from '../services/request.service';
 })
 export class OpenForumComponent implements OnInit {
 
-  constructor(private rs: RequestService) { }
+  constructor(private hprs: HomepageRequestService, private auth: AuthService) { }
 
   officers = [
     'President',
@@ -21,8 +22,8 @@ export class OpenForumComponent implements OnInit {
 
   selectedOfficer = '';
   messageBody = '';
-  maxChars=1000;
-  minChars=10;
+  maxChars = 1000;
+  minChars = 10;
 
   formReady: boolean = false;
   sendStatus = '';
@@ -32,7 +33,7 @@ export class OpenForumComponent implements OnInit {
   ngOnInit() { }
 
   checkForm(): boolean {
-    if (this.messageBody.length >= this.minChars && this.selectedOfficer != '' && this.rs.isLoggedOn()) {
+    if (this.messageBody.length >= this.minChars && this.selectedOfficer !== '' && this.auth.isLoggedIn()) {
       return true;
     } else {
       return false;
@@ -40,28 +41,21 @@ export class OpenForumComponent implements OnInit {
   }
 
   sendMessage() {
-    let uri = "homepage/open_forum";
-    let data = {
-      "recipient": this.selectedOfficer,
-      "message_body": this.messageBody.slice(0, this.maxChars),
+    const uri = 'homepage/open_forum';
+    const data = {
+      'recipient': this.selectedOfficer,
+      'message_body': this.messageBody.slice(0, this.maxChars),
     };
-    let success = false;
+    const success = false;
     if (this.checkForm()) {
       this.showSendStatus = true;
       this.sendFailed = false;
       this.sendStatus = 'Loading...';
-      this.rs.post(uri, data, (data)=>{
-        this.sendStatus = 'Message Sent';
-        this.selectedOfficer = '';
-        this.messageBody = '';
-      }, (data)=>{
-        this.sendFailed = true;
-        this.sendStatus = 'Delivery failed! Please contact aswwu.webmaster@wallawalla.edu for further assistance.';
-      } );
+      this.hprs.createForum(data);
     }
   }
 
   getLoggedOn() {
-    return this.rs.isLoggedOn();
+    return this.auth.isLoggedIn();
   }
 }

@@ -2,15 +2,9 @@ import { Component, OnInit, EventEmitter, Input } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/merge';
+import { Observable } from 'rxjs/internal/Observable';
+import { of, merge } from 'rxjs';
+import { debounceTime, distinctUntilChanged, tap, catchError, switchMap } from 'rxjs/operators';
 
 import { SuperDuperService } from '../services/services';
 
@@ -32,20 +26,20 @@ export class SuperDuperComponent implements OnInit {
 
   ngOnInit() {}
 
-  search = (text$: Observable<string>) => 
-    text$
-      .debounceTime(300)
-      .distinctUntilChanged()
-      .do(() => this.searching = true)
-      .switchMap(term =>
-        this._service.SearchAndReturnObservableArray(term)
-          .do(() => this.searchFailed = false)
-          .catch(() => {
-            this.searchFailed = true;
-            return of([]);
-          }))
-      .do(() => this.searching = false)
-      .merge(this.hideSearchingWhenUnsubscribed);
+  search = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      tap(() => this.searching = true),
+      switchMap((term) => this._service.SearchAndReturnObservableArray(term)),
+      tap(() => this.searchFailed = false),
+      catchError(() => {
+        this.searchFailed = true;
+        return of([]);
+      }),
+      tap(() => this.searching = false),
+      // merge(this.hideSearchingWhenUnsubscribed)
+    )
 
   formatter = (x: {main: string}) => x.main;
 
