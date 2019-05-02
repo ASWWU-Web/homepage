@@ -2,21 +2,69 @@
   width: 400px;
   margin: auto;
 }
-#mask-search-query:focus {
+
+#search-button {
+    z-index: 0;
+    width: 50px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-left: 0px;
+}
+
+#search-button:hover {
+    background-color: white;
+    color: grey;
+}
+
+#search-button:active {
+    box-shadow: none;
+    border-color: white;
+}
+
+#search-input {
+    z-index: 1;
+    font-weight: 900;
+    font-family: var(--font-2);
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 9px;
+}
+
+.search-outline:focus {
+    box-shadow: none;
+}
+
+::placeholder {
+    color: white;
+}
+
+#search-icon {
+    height: 16px !important;
+    width: 16px !important;
+}
+
+.search-outline {
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, .5);
+    height: 50px;
+}
+
+ /* #mask-search-query:focus {
   background-color: white;
   color: grey;
-}
-#mask-search-button {
+} */
+/* #mask-search-button {
   border-left: 0px;
   transform: translateX(-2px);
   padding-left: 15px;
   padding-right: 15px;
-}
-#mask-search-button:hover {
+  width: 45px;
+} */
+/* #mask-search-button:hover {
   background-color: white;
   color: grey;
-}
-.search-area-element {
+} */
+/* .search-area-element {
   font-family: var(--font-2);
   color: white;
   transition: color .2s, background-color .2s;
@@ -28,46 +76,53 @@
   border: 1px solid white;
   border-radius: 0px;
   box-shadow: inset 0px 0px 0px 2px white;
-}
-#search-input-group span button {
+} */
+
+/* #search-input-group span button {
     padding-top: 12px;
     padding-bottom: 12px;
-}
+} */
 
-#search-input-group >>> .dropdown-menu {
+/* button .search-area-element {
+    padding-top: 50px;
+} */
+
+/* #search-input-group >>> .dropdown-menu {
     width: 400px;
     border-radius: 0px;
     margin: 0px;
     padding: 0px;
-}
+} */
 
-.super-section-header {
+/* .super-section-header {
     background-color: grey !important;
     color: white;
     font-weight: bold;
     padding: .15rem .5rem;
-}
+} */
 
-#search-input-group >>> .dropdown-item {
+/* #search-input-group >>> .dropdown-item {
     padding:0px;
     width: 100%;
-}
+} */
 
-.result {
+/* .result {
     padding-left: 1.5rem;
     padding-top:.25rem;
     padding-bottom:.25rem;
-}
+} */
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+/* ::placeholder {
     color: white;
-    opacity: 1; /* Firefox */
-}
+    opacity: 1;
+    text-align: center;
+    vertical-align: baseline;
+} */
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+/* :-ms-input-placeholder {
     color: white;
-}
+} */
 
-::-ms-input-placeholder { /* Microsoft Edge */
+/* ::-ms-input-placeholder {
     color: white;
-}
+} */

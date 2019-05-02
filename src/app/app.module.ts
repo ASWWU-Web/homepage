@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,8 +57,13 @@ import { SharedNgContainerComponent } from '../shared-ng/components/components';
     FormsModule,
     NgbModule.forRoot(),
     AppRoutingModule,
+    FontAwesomeModule,
   ],
   providers: [RequestService, CalendarService, SuperDuperService, HermesService, HomepageRequestService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    library.add(faSearch);
+  }
+}
