@@ -49,3 +49,29 @@
     height: 50px;
 }
 
+.super-section-header {
+    background-color: grey !important;
+    color: white;
+    font-weight: bold;
+    padding: .15rem .5rem;
+}
+
+.result {
+    padding-left: 1.5rem;
+    padding-top:.25rem;
+    padding-bottom:.25rem;
+}
+
+#search-bar >>> .dropdown-menu {
+    width: 400px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#search-bar >>> .dropdown-item {
+    padding:0px;
+    width: 100%;
+}
+
+
