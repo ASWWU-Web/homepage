@@ -55,7 +55,7 @@ import { SharedNgContainerComponent } from '../shared-ng/components/components';
     HttpModule,
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot(),
+    NgbModule,
     AppRoutingModule,
     FontAwesomeModule,
   ],

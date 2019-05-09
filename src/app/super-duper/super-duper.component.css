@@ -1,4 +1,4 @@
-#search-bar {
+.search-bar {
   width: 400px;
   margin: auto;
 }
@@ -74,4 +74,36 @@
     width: 100%;
 }
 
+#search-dropdown {
+    border-left: 0px;
+    box-shadow: none;
+    border-color: white;
+    z-index: 0px;
+    color: white;
+}
 
+#search-dropdown:hover {
+    background-color: white;
+    color: grey;
+}
+
+#search-dropdown:focus {
+    background-color: white;
+    color: grey;
+}
+
+.dropdown-menu {
+    min-width: 0rem !important;
+    left: -5px !important;
+    width: 124px;
+}
+
+.dropdown-item:hover {
+    background-color: grey;
+    color: black;
+}
+
+.dropdown-item:focus {
+    background-color: white;
+    color: black;
+}

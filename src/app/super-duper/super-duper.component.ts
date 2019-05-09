@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { of, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, tap, catchError, switchMap } from 'rxjs/operators';
+import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 
 import { SuperDuperService } from '../services/services';
 

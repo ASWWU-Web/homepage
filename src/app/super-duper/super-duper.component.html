@@ -1,10 +1,18 @@
-<div id="search-bar" class="input-group mb-3">
+<div class="search-bar input-group mb-3">
   <ng-template #rt let-r="result" let-t="term">
     <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
     <div (click)="goToResult(r.link)" class="result">{{r.main}}</div>
   </ng-template>
   <div class="input-group">
     <input #maskInput type="text" id="search-input" class="form-control search-outline" (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find the one...">
+    <div ngbDropdown>
+      <button id="search-dropdown" class="btn search-outline" ngbDropdownToggle>Site</button>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <button class="dropdown-item" ngbDropdownItem>Mask</button>
+        <button class="dropdown-item" ngbDropdownItem>Pages</button>
+        <button class="dropdown-item" ngbDropdownItem>Jobs</button>
+      </div>
+    </div>
     <div class="input-group-append">
       <button id="search-button" class="btn btn-primary search-outline" (click)="maskSearch(maskInput.value)" ><fa-icon id="search-icon" icon="search"></fa-icon></button>
     </div>
