@@ -55,6 +55,7 @@ export class SuperDuperComponent implements OnInit {
     window.location.href = resultLink;
   }
 
+  // allows dropdown menu button to change based on user selection
   ChangeSite(newSite: string) {
     this.selectSites = newSite;
   }
