@@ -6,11 +6,9 @@
   <div class="input-group">
     <input #maskInput type="text" id="search-input" class="form-control search-outline" (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find the one...">
     <div ngbDropdown>
-      <button id="search-dropdown" class="btn search-outline" ngbDropdownToggle>Site</button>
+      <button id="search-dropdown" class="btn search-outline" ngbDropdownToggle>{{ selectSites }}</button>
       <div class="dropdown-menu" ngbDropdownMenu>
-        <button class="dropdown-item" ngbDropdownItem>Mask</button>
-        <button class="dropdown-item" ngbDropdownItem>Pages</button>
-        <button class="dropdown-item" ngbDropdownItem>Jobs</button>
+        <button class="dropdown-item" *ngFor="let site of sites" (click)="ChangeSite(site)" ngbDropdownItem>{{site}}</button>
       </div>
     </div>
     <div class="input-group-append">

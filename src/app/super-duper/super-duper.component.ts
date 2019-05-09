@@ -20,6 +20,8 @@ export class SuperDuperComponent implements OnInit {
   searching = false;
   searchFailed = false;
   hideSearchingWhenUnsubscribed = new Observable(() => () => this.searching = false);
+  sites: string[] = ['Mask', 'Pages', 'Jobs'];
+  selectSites: string = 'Mask';
 
   searchPageroute = 'search';
 
@@ -51,6 +53,10 @@ export class SuperDuperComponent implements OnInit {
 
   goToResult(resultLink) {
     window.location.href = resultLink;
+  }
+
+  ChangeSite(newSite: string) {
+    this.selectSites = newSite;
   }
 
 }
