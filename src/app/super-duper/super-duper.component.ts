@@ -20,10 +20,22 @@ export class SuperDuperComponent implements OnInit {
   searching = false;
   searchFailed = false;
   hideSearchingWhenUnsubscribed = new Observable(() => () => this.searching = false);
+
+  // dropdown menu options
   sites: string[] = ['Mask', 'Pages', 'Jobs'];
+  // placeholder options
+  placeholders: string[] = ['search the mask...', 'search pages...', 'search jobs...'];
+  // default placeholder
+  placeHolder: string = 'search the mask...';
+  // default dropdown option
   selectSites: string = 'Mask';
 
   searchPageroute = 'search';
+
+  // new page routes
+  maskPageRoute = 'mask?query=';
+  pagesPageRoute = 'pages?query=';
+  jobsPageRoute = 'jobs?query=';
 
   constructor(private _service: SuperDuperService, private router: Router) { }
 
@@ -58,6 +70,24 @@ export class SuperDuperComponent implements OnInit {
   // allows dropdown menu button to change based on user selection
   ChangeSite(newSite: string) {
     this.selectSites = newSite;
+    if (newSite === 'Mask') {
+      this.placeHolder = this.placeholders[0];
+    } else if (newSite === 'Pages') {
+      this.placeHolder = this.placeholders[1];
+    } else if (newSite === 'Jobs') {
+      this.placeHolder = this.placeholders[2];
+    }
+  }
+
+  // new search function
+  superSearch(userInput: string) {
+    if (this.selectSites === 'Mask') {
+      window.location.href = this.maskPageRoute + userInput;
+    } else if (this.selectSites === 'Pages') {
+      window.location.href = this.pagesPageRoute + userInput;
+    } else if (this.selectSites === 'Jobs') {
+      window.location.href = this.jobsPageRoute + userInput;
+    }
   }
 
 }

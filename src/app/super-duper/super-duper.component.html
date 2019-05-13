@@ -4,7 +4,7 @@
     <div (click)="goToResult(r.link)" class="result">{{r.main}}</div>
   </ng-template>
   <div class="input-group">
-    <input #maskInput type="text" id="search-input" class="form-control search-outline" (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="Find the one...">
+    <input #searchInput type="text" id="search-input" class="form-control search-outline" (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="{{placeHolder}}">
     <div ngbDropdown>
       <button id="search-dropdown" class="btn search-outline" ngbDropdownToggle>{{ selectSites }}</button>
       <div class="dropdown-menu" ngbDropdownMenu>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="input-group-append">
-      <button id="search-button" class="btn btn-primary search-outline" (click)="maskSearch(maskInput.value)" ><fa-icon id="search-icon" icon="search"></fa-icon></button>
+      <button id="search-button" class="btn btn-primary search-outline" (click)="superSearch(searchInput.value)" ><fa-icon id="search-icon" icon="search"></fa-icon></button>
     </div>
   </div>
 </div>
