@@ -4,10 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Observable } from 'rxjs/internal/Observable';
 import { of, merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged, tap, catchError, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, tap, catchError, switchMap, map } from 'rxjs/operators';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 
-import { SuperDuperService } from '../services/services';
+import { HomepageRequestService } from '../../shared-ng/services/services';
 
 @Component({
   selector: 'super-duper',
@@ -37,35 +37,29 @@ export class SuperDuperComponent implements OnInit {
   pagesPageRoute = 'pages?query=';
   jobsPageRoute = 'jobs?query=';
 
-  constructor(private _service: SuperDuperService, private router: Router) { }
+  constructor(private hprs: HomepageRequestService, router: Router) { }
 
   ngOnInit() {}
 
-  search = (text$: Observable<string>) =>
-    text$.pipe(
+  getNames(query: string) {
+    if (query === '') {
+      return of({results: []});
+    }
+    return this.hprs.get('search/names', {full_name: query});
+  }
+
+  search = (text$: Observable<string>) => {
+    return text$.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-      tap(() => this.searching = true),
-      switchMap((term) => this._service.SearchAndReturnObservableArray(term)),
-      tap(() => this.searchFailed = false),
-      catchError(() => {
-        this.searchFailed = true;
-        return of([]);
-      }),
-      tap(() => this.searching = false),
-      // merge(this.hideSearchingWhenUnsubscribed)
-    )
+      switchMap((data) => this.getNames(data)),
+      map((data: {results: {username: string, full_name: string}[]}) => {
+        return data.results.map((item) => item.username);
+      })
+    );
+  }
 
   formatter = (x: {main: string}) => x.main;
-
-  maskSearch(userInput: string) {
-    // re-navigate with a parameter
-    this.router.navigate([this.searchPageroute, userInput]);
-  }
-
-  goToResult(resultLink) {
-    window.location.href = resultLink;
-  }
 
   // allows dropdown menu button to change based on user selection
   ChangeSite(newSite: string) {
@@ -83,11 +77,13 @@ export class SuperDuperComponent implements OnInit {
   superSearch(userInput: string) {
     if (this.selectSites === 'Mask') {
       window.location.href = this.maskPageRoute + userInput;
-    } else if (this.selectSites === 'Pages') {
+    }
+    /* Not implemented yet
+    else if (this.selectSites === 'Pages') {
       window.location.href = this.pagesPageRoute + userInput;
     } else if (this.selectSites === 'Jobs') {
       window.location.href = this.jobsPageRoute + userInput;
-    }
+    }*/
   }
 
 }

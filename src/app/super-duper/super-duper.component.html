@@ -1,10 +1,6 @@
 <div class="search-bar input-group mb-3">
-  <ng-template #rt let-r="result" let-t="term">
-    <div *ngIf="r.top" class="dropdown-header super-section-header">{{r.source}}</div>
-    <div (click)="goToResult(r.link)" class="result">{{r.main}}</div>
-  </ng-template>
-  <div class="input-group">
-    <input #searchInput type="text" id="search-input" class="form-control search-outline" (keyup.enter)="maskSearch(maskInput.value)" [resultTemplate]="rt" [class.is-invalid]="searchFailed" [value]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" placeholder="{{placeHolder}}">
+  <form class="input-group">
+    <input #searchInput type="search" id="search-input" class="form-control search-outline" [ngbTypeahead]="search" placeholder="{{placeHolder}}">
     <div ngbDropdown>
       <button id="search-dropdown" class="btn search-outline" ngbDropdownToggle>{{ selectSites }}</button>
       <div class="dropdown-menu" ngbDropdownMenu>
@@ -14,6 +10,6 @@
     <div class="input-group-append">
       <button id="search-button" class="btn btn-primary search-outline" (click)="superSearch(searchInput.value)" ><fa-icon id="search-icon" icon="search"></fa-icon></button>
     </div>
-  </div>
+  </form>
 </div>
 
