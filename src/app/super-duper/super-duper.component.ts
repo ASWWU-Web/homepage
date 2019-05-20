@@ -8,6 +8,7 @@ import { debounceTime, distinctUntilChanged, tap, catchError, switchMap, map } f
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 
 import { HomepageRequestService } from '../../shared-ng/services/services';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'super-duper',
@@ -22,9 +23,9 @@ export class SuperDuperComponent implements OnInit {
   hideSearchingWhenUnsubscribed = new Observable(() => () => this.searching = false);
 
   // dropdown menu options
-  sites: string[] = ['Mask', 'Pages', 'Jobs'];
+  sites: string[] = ['Mask', /*'Pages', 'Jobs'*/];
   // placeholder options
-  placeholders: string[] = ['search the mask...', 'search pages...', 'search jobs...'];
+  placeholders: string[] = ['search the mask...', /*'search pages...', 'search jobs...'*/];
   // default placeholder
   placeHolder: string = 'search the mask...';
   // default dropdown option
@@ -36,8 +37,11 @@ export class SuperDuperComponent implements OnInit {
   maskPageRoute = 'mask?query=';
   pagesPageRoute = 'pages?query=';
   jobsPageRoute = 'jobs?query=';
+  formGroup: FormGroup;
 
-  constructor(private hprs: HomepageRequestService, router: Router) { }
+  constructor(private hprs: HomepageRequestService, private router: Router) {
+    this.formGroup = new FormGroup({name: new FormControl('')});
+  }
 
   ngOnInit() {}
 
@@ -54,12 +58,12 @@ export class SuperDuperComponent implements OnInit {
       distinctUntilChanged(),
       switchMap((data) => this.getNames(data)),
       map((data: {results: {username: string, full_name: string}[]}) => {
-        return data.results.map((item) => item.username);
+        return data.results;
       })
     );
   }
 
-  formatter = (x: {main: string}) => x.main;
+  formatter = (x: {username: string, full_name: string}) => x.full_name;
 
   // allows dropdown menu button to change based on user selection
   ChangeSite(newSite: string) {
@@ -74,9 +78,12 @@ export class SuperDuperComponent implements OnInit {
   }
 
   // new search function
-  superSearch(userInput: string) {
+  superSearch(userinput: string) {
+    if (userinput === undefined) {
+      userinput = this.formGroup.value.name;
+    }
     if (this.selectSites === 'Mask') {
-      window.location.href = this.maskPageRoute + userInput;
+      window.location.href = this.maskPageRoute + userinput;
     }
     /* Not implemented yet
     else if (this.selectSites === 'Pages') {

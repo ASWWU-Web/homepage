@@ -1,14 +1,19 @@
-<div class="search-bar input-group mb-3">
-  <form class="input-group">
-    <input #searchInput type="search" id="search-input" class="form-control search-outline" [ngbTypeahead]="search" placeholder="{{placeHolder}}">
+<div class="search-bar input-group mb-3"> 
+    <ng-template #rt let-r="result" let-t="term">
+        <div (click)="superSearch(r.username)">
+          <ngb-highlight [result]="r.full_name" [term]="t"></ngb-highlight>
+        </div>
+      </ng-template>
+  <form [formGroup]="formGroup" (ngSubmit)=superSearch() class="input-group">
+    <input formControlName="name" type="search" id="search-input" class="form-control search-outline" [resultTemplate]="rt" [inputFormatter]="formatter" [ngbTypeahead]="search" placeholder="{{placeHolder}}">
     <div ngbDropdown>
-      <button id="search-dropdown" class="btn search-outline" ngbDropdownToggle>{{ selectSites }}</button>
+      <button id="search-dropdown" type="button" class="btn search-outline" ngbDropdownToggle>{{ selectSites }}</button>
       <div class="dropdown-menu" ngbDropdownMenu>
-        <button class="dropdown-item" *ngFor="let site of sites" (click)="ChangeSite(site)" ngbDropdownItem>{{site}}</button>
+        <button class="dropdown-item" type="button" *ngFor="let site of sites" (click)="ChangeSite(site)" ngbDropdownItem>{{site}}</button>
       </div>
     </div>
     <div class="input-group-append">
-      <button id="search-button" class="btn btn-primary search-outline" (click)="superSearch(searchInput.value)" ><fa-icon id="search-icon" icon="search"></fa-icon></button>
+      <button id="search-button" class="btn btn-primary search-outline" (click)="superSearch(value.name)" ><fa-icon id="search-icon" icon="search"></fa-icon></button>
     </div>
   </form>
 </div>
