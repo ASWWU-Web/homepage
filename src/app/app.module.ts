@@ -24,7 +24,6 @@ import { HomeComponent } from './home/home.component';
 import { MobileNavComponent } from '../shared-ng/components/mobile-nav/mobile-nav.component';
 import { SuperDuperComponent } from './super-duper/super-duper.component';
 
-import { SearchComponent } from './search/search.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { PageCardComponent } from './page-card/page-card.component';
 import { JobCardComponent } from './job-card/job-card.component';
@@ -42,7 +41,6 @@ import { SharedNgContainerComponent } from '../shared-ng/components/components';
     UserBubbleComponent,
     HomeComponent,
     SuperDuperComponent,
-    SearchComponent,
     ProfileCardComponent,
     PageCardComponent,
     JobCardComponent,
