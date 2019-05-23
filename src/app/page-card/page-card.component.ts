@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RequestService } from '../services/request.service';
-import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../config';
+import { RequestService } from '../../shared-ng/services/services';
+import { MEDIA_SM, DEFAULT_PHOTO, CURRENT_YEAR } from '../../shared-ng/config';
 import { resolveCoverImage } from '../resolveCoverImage';
 
 @Component({
@@ -12,7 +12,7 @@ import { resolveCoverImage } from '../resolveCoverImage';
 
 export class PageCardComponent implements OnInit {
   @Input() page: any;
-  @Input() showMeta: boolean = false;
+  @Input() showMeta = false;
   profile: any;
   router: any;
   public getCoverImage: any = resolveCoverImage;
@@ -23,18 +23,18 @@ export class PageCardComponent implements OnInit {
 
   ngOnInit() {
     if (this.showMeta) {
-      this.requestService.get('/profile/' + CURRENT_YEAR + '/' + this.page['author'], (data) => {
+      this.requestService.get('/profile/' + CURRENT_YEAR + '/' + this.page['author']).subscribe( (data) => {
         this.profile = data;
       }, null);
     }
   }
 
-  //Photourl to link function returns proper url and BLANK photo if photo == "None"
+  // Photourl to link function returns proper url and BLANK photo if photo == "None"
   getPhotoLink(url: string) {
-    if(url && url != "None") {
-        return MEDIA_SM + "/" + url;
+    if (url && url !== 'None') {
+        return MEDIA_SM + '/' + url;
     } else {
-        return MEDIA_SM + "/" + DEFAULT_PHOTO;
+        return MEDIA_SM + '/' + DEFAULT_PHOTO;
     }
   }
 
@@ -43,14 +43,14 @@ export class PageCardComponent implements OnInit {
       if (this.profile['full_name'] != null) {
         return this.profile['full_name']
       } else {
-        let author = this.page['author'].replace(/\./gi, ' ');
+        const author = this.page['author'].replace(/\./gi, ' ');
         // https://stackoverflow.com/questions/4878756/how-to-capitalize-first-letter-of-each-word-like-a-2-word-city
-        return author.replace(/\w\S*/g, function(txt) {
+        return author.replace(/\w\S*/g, (txt) => {
           return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         });
       }
-    } catch(err) {
-      return ""
+    } catch (err) {
+      return '';
     }
   }
 
@@ -59,18 +59,18 @@ export class PageCardComponent implements OnInit {
   }
 
   getDateCreated() {
-    let date = new Date(this.page['created']);
+    const date = new Date(this.page['created']);
     return date.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
   navigate(url) {
     // wait to navigate if author link was clicked
-    setTimeout(()=>{window.location.href = 'https://aswwu.com/pages/' + this.page.url;}, 150);
+    setTimeout(() => {window.location.href = 'https://aswwu.com/pages/' + this.page.url; }, 150);
   }
 
   // this function is to remedy a bug in Angular. Do not alter or remove.
   getShowMeta() {
-    if (this.showMeta == true) {
+    if (this.showMeta === true) {
       return true;
     }
     return false;

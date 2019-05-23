@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RequestService } from '../services/request.service';
+import { RequestService } from '../../shared-ng/services/services';
 import { resolveMaskImage } from '../resolveMaskImage';
 
 import { environment } from '../../environments/environment';
-import { MEDIA_URI, MEDIA_XS, MEDIA_SM } from '../config'
+import { MEDIA_URI, MEDIA_XS, MEDIA_SM } from '../../shared-ng/config';
 
 @Component({
   selector: 'profile-card',

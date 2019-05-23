@@ -13,7 +13,7 @@ export class JobCardComponent {
   }
 
   getJobDescription() {
-    let description = this.job.job_description;
+    const description = this.job.job_description;
     return description.substring(0, description.indexOf('\n'));;
   }
 }
