@@ -78,10 +78,23 @@ export class SuperDuperComponent implements OnInit {
   }
 
   // new search function
-  superSearch(userinput: string) {
-    if (userinput === undefined) {
+  superSearch(userinput?: any) {
+    /**
+     * If user chooses name from dropdown menu
+     * then no arguments are passed in.
+     * If user chooses to search whatever they
+     * typed in then 1 is passed in distiguishing
+     * which value to search.
+     */
+    if (!userinput) {
+      // parses array of dropdown menu and searches username
+      userinput = this.formGroup.value.name.username;
+    } else if (userinput === 1) {
+      // keeps generic name user typed
       userinput = this.formGroup.value.name;
     }
+
+    // redirects user to mask query page
     if (this.selectSites === 'Mask') {
       window.location.href = this.maskPageRoute + userinput;
     }
