@@ -17,6 +17,7 @@ import { SuperDuperService } from './services/services';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from '../shared-ng/components/nav-bar/nav-bar.component';
 import { FooterComponent } from '../shared-ng/components/footer/footer.component';
+import { HeaderComponent } from '../shared-ng/components/header/header.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CalendarService } from './services/calendar.service';
 import { UserBubbleComponent } from '../shared-ng/components/user-bubble/user-bubble.component';
@@ -37,6 +38,7 @@ import { SharedNgContainerComponent } from '../shared-ng/components/components';
     NavBarComponent,
     MobileNavComponent,
     FooterComponent,
+    HeaderComponent,
     UpcomingComponent,
     UserBubbleComponent,
     HomeComponent,
