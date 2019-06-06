@@ -24,10 +24,6 @@ import { UserBubbleComponent } from '../shared-ng/components/user-bubble/user-bu
 import { HomeComponent } from './home/home.component';
 import { SuperDuperComponent } from './super-duper/super-duper.component';
 
-import { ProfileCardComponent } from './profile-card/profile-card.component';
-import { PageCardComponent } from './page-card/page-card.component';
-import { JobCardComponent } from './job-card/job-card.component';
-import { ScrollCardsComponent } from './scroll-cards/scroll-cards.component';
 import { OpenForumComponent } from './open-forum/open-forum.component';
 import { SharedNgContainerComponent } from '../shared-ng/components/components';
 
@@ -41,10 +37,6 @@ import { SharedNgContainerComponent } from '../shared-ng/components/components';
     UserBubbleComponent,
     HomeComponent,
     SuperDuperComponent,
-    ProfileCardComponent,
-    PageCardComponent,
-    JobCardComponent,
-    ScrollCardsComponent,
     OpenForumComponent,
     SharedNgContainerComponent
   ],
