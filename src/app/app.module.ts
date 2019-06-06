@@ -22,7 +22,6 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { CalendarService } from './services/calendar.service';
 import { UserBubbleComponent } from '../shared-ng/components/user-bubble/user-bubble.component';
 import { HomeComponent } from './home/home.component';
-import { MobileNavComponent } from '../shared-ng/components/mobile-nav/mobile-nav.component';
 import { SuperDuperComponent } from './super-duper/super-duper.component';
 
 import { ProfileCardComponent } from './profile-card/profile-card.component';
@@ -36,7 +35,6 @@ import { SharedNgContainerComponent } from '../shared-ng/components/components';
   declarations: [
     AppComponent,
     NavBarComponent,
-    MobileNavComponent,
     FooterComponent,
     HeaderComponent,
     UpcomingComponent,
