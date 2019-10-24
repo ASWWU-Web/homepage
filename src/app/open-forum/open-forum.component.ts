@@ -51,7 +51,17 @@ export class OpenForumComponent implements OnInit {
       this.showSendStatus = true;
       this.sendFailed = false;
       this.sendStatus = 'Loading...';
-      this.hprs.createForum(data);
+      let createForumObservable = this.hprs.createForum(data);
+      createForumObservable.subscribe(
+          (data) => {
+            this.sendStatus = 'Message Sent';
+            this.selectedOfficer = '';
+            this.messageBody = '';
+          }, (data) => {
+            this.sendFailed = true;
+            this.sendStatus = 'Delivery failed! Please contact aswwu.webmaster@wallawalla.edu for further assistance.';
+          }
+      );
     }
   }
 
