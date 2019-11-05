@@ -1,3 +1,5 @@
+This project was archived on November 4, 2019. Its history was merged into ASWWU-Web/frontend where development will continue.
+
 # Homepage
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
